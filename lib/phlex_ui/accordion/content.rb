@@ -3,9 +3,19 @@
 module PhlexUI
     class Accordion::Content < Base
         def template(&)
-            div(data: { accordion_target: "content" }, class: 'overflow-y-hidden') do
-                div(class: 'pb-4 pt-0', &)
-            end
+            div(**attrs, &)
+        end
+
+        private
+
+        def default_attrs
+            {
+                data: { 
+                    accordion_target: "content" 
+                }, 
+                class: 'overflow-y-hidden',
+                style: 'height: 0px;'
+            }
         end
     end
 end

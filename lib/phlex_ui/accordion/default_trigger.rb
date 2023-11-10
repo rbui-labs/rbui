@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 module PhlexUI
-    class Accordion::Trigger < Base
+    class Accordion::DefaultTrigger < Base
         def template(&)
-            button(**attrs, &)
+            div(class: "flex items-center justify-between w-full") do
+                p(&)
+                render ::PhlexUI::Accordion::Icon.new
+            end
         end
 
         def default_attrs
