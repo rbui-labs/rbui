@@ -1,73 +1,92 @@
+# frozen_string_literal: true
+
 module PhlexUI
     class Button < Base
-        def initialize(**kwargs)
-            @variant = kwargs[:variant]&.to_sym || :primary
-            @size = kwargs[:size]
-            @kwargs = kwargs
-            @kwargs[:type] ||= "button"
+        def initialize(variant: :primary, size: :md, **attrs)
+            @variant = variant.to_sym
+            @size = size.to_sym
+            super(**attrs)
         end
 
         def template(&)
-            case @variant
-            when :primary
-                button(
-                    **@kwargs, 
-                    class: tokens(
-                        "whitespace-nowrap inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary-600 dark:bg-primary-500 text-white shadow hover:bg-primary-700 dark:hover:bg-primary-600 h-9",
-                        -> { @size == :icon } => "h-9 w-9 justify-center",
-                        -> { @size.nil? } => "px-4 py-2",
-                        -> { @kwargs[:class] } => @kwargs[:class]
-                    ), 
-                    &)
-            when :link
-                button(
-                    **@kwargs, 
-                    class: tokens(
-                        "whitespace-nowrap inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary-600 dark:text-primary-400 underline-offset-4 hover:underline h-9 px-4 py-2",
-                        -> { @kwargs[:class] } => @kwargs[:class]
-                    ),
-                    &)
-            when :secondary
-                button(
-                    **@kwargs,
-                    class: tokens(
-                        "whitespace-nowrap inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary-100 dark:bg-accent text-primary-600 dark:text-white shadow-sm hover:bg-primary-200 hover:text-primary-700 dark:hover:bg-opacity-10 h-9",
-                        -> { @size == :icon } => "h-9 w-9 justify-center",
-                        -> { @size.nil? } => "px-4 py-2",
-                        -> { @kwargs[:class] } => @kwargs[:class]
-                    ),
-                    &)
-            when :destructive
-                button(
-                    **@kwargs,
-                    class: tokens(
-                        "whitespace-nowrap inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-destructive-600 hover:bg-destructive-700 dark:bg-destructive-500 dark:hover:bg-destructive-600 text-white shadow-sm h-9",
-                        -> { @size == :icon } => "h-9 w-9 justify-center",
-                        -> { @size.nil? } => "px-4 py-2",
-                        -> { @kwargs[:class] } => @kwargs[:class]
-                    ),
-                    &)
-            when :outline
-                button(
-                    **@kwargs,
-                    class: tokens(
-                        "whitespace-nowrap inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border bg-transparent shadow-sm hover:bg-accent h-9",
-                        -> { @size == :icon } => "h-9 w-9 justify-center",
-                        -> { @size.nil? } => "px-4 py-2",
-                        -> { @kwargs[:class] } => @kwargs[:class]
-                    ),
-                    &)
-            when :ghost
-                button(
-                    **@kwargs,
-                    class: tokens(
-                        "whitespace-nowrap inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent h-9",
-                        -> { @size == :icon } => "h-9 w-9 justify-center",
-                        -> { @size.nil? } => "px-4 py-2",
-                        -> { @kwargs[:class] } => @kwargs[:class]
-                    ),
-                    &)
+            button(**attrs, &)
+        end
+
+        private
+
+        def size_classes
+            case @size
+            when :sm
+                "px-3 py-1.5 h-8 text-xs"
+            when :md
+                "px-4 py-2 h-9 text-sm"
+            when :lg
+                "px-4 py-2 h-10 text-base"
+            when :xl
+                "px-6 py-3 h-12 text-base"
+            when :icon
+                "h-9 w-9"
             end
+        end
+
+        def primary_classes
+            tokens(
+                "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-white shadow hover:bg-primary/90",
+                size_classes
+            )
+        end
+
+        def link_classes
+            tokens(
+                "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline",
+                size_classes
+            )
+        end
+
+        def secondary_classes
+            tokens(
+                "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-muted-background text-text shadow-sm hover:bg-opacity-80",
+                size_classes
+            )
+        end
+
+        def destructive_classes
+            tokens(
+                "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-destructive text-white shadow-sm hover:bg-destructive/90",
+                size_classes
+            )
+        end
+
+        def outline_classes
+            tokens(
+                "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-accent-background hover:text-accent-text",
+                size_classes
+            )
+        end
+
+        def ghost_classes
+            tokens(
+                "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent-background hover:text-accent-text",
+                size_classes
+            )
+        end
+
+        def default_classes
+            case @variant
+            when :primary then primary_classes
+            when :link then link_classes
+            when :secondary then secondary_classes
+            when :destructive then destructive_classes
+            when :outline then outline_classes
+            when :ghost then ghost_classes
+            end
+        end
+
+        def default_attrs
+            {
+                type: "button",
+                class: default_classes,
+            }
         end
     end
 end
