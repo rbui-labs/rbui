@@ -16,13 +16,13 @@ module PhlexUI
         def colors
             case @variant
             when nil
-                'ring-gray-600/10 bg-muted text-text [&>svg]:text-muted'
+                'ring-border bg-muted-background text-text [&>svg]:opacity-80'
             when :warning
-                'ring-warning-600/10 bg-warning-100 text-warning-800 [&>svg]:text-warning'
+                'ring-warning/20 bg-warning/10 text-warning [&>svg]:text-warning/80'
             when :success
-                'ring-success-700/10 bg-success-100 text-success-800 [&>svg]:text-success'
+                'ring-success/20 bg-success/10 text-success [&>svg]:text-success/80'
             when :destructive
-                'ring-destructive-600/10 text-destructive-800 bg-destructive-100 [&>svg]:text-destructive'
+                'ring-destructive/10 dark:ring-destructive/20 text-destructive bg-destructive/10 [&>svg]:text-destructive/80'
             end
         end
 
