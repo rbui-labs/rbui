@@ -2,9 +2,10 @@
 
 module PhlexUI
     class Button < Base
-        def initialize(variant: :primary, size: :md, **attrs)
+        def initialize(variant: :primary, size: :md, icon: false, **attrs)
             @variant = variant.to_sym
             @size = size.to_sym
+            @icon = icon
             super(**attrs)
         end
 
@@ -15,17 +16,20 @@ module PhlexUI
         private
 
         def size_classes
-            case @size
-            when :sm
-                "px-3 py-1.5 h-8 text-xs"
-            when :md
-                "px-4 py-2 h-9 text-sm"
-            when :lg
-                "px-4 py-2 h-10 text-base"
-            when :xl
-                "px-6 py-3 h-12 text-base"
-            when :icon
-                "h-9 w-9"
+            if @icon
+                case @size
+                when :sm then "h-6 w-6"
+                when :md then "h-9 w-9"
+                when :lg then "h-10 w-10"
+                when :xl then "h-12 w-12"
+                end
+            else
+                case @size
+                when :sm then "px-3 py-1.5 h-8 text-xs"
+                when :md then "px-4 py-2 h-9 text-sm"
+                when :lg then "px-4 py-2 h-10 text-base"
+                when :xl then "px-6 py-3 h-12 text-base"
+                end
             end
         end
 
@@ -59,7 +63,7 @@ module PhlexUI
 
         def outline_classes
             tokens(
-                "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-transparent shadow-sm hover:bg-accent-background hover:text-accent-text",
+                "whitespace-nowrap inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent-background hover:text-accent-text",
                 size_classes
             )
         end
