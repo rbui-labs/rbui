@@ -7,10 +7,12 @@ module PhlexUI
         FORMATTER = ::Rouge::Formatters::HTML.new
         ROUGE_CSS = Rouge::Themes::Github.mode(:dark).render(scope: '.highlight') # See themes here: https://rouge-ruby.github.io/docs/Rouge/CSSTheme.html
 
-        def initialize(code, syntax:, clipboard: true, **attrs)
+        def initialize(code, syntax:, clipboard: true, clipboard_success: "Copied!", clipboard_error: "Copy failed!", **attrs)
             @code = code
 			@syntax = syntax.to_sym
             @clipboard = clipboard
+            @clipboard_success = clipboard_success
+            @clipboard_error = clipboard_error
 
 			if @syntax == :ruby || @syntax == :html
 				@code = @code.gsub(/(?:^|\G) {2}/m, "	")
@@ -37,7 +39,7 @@ module PhlexUI
         end
 
         def with_clipboard
-            render PhlexUI::Clipboard.new(class: 'relative') do
+            render PhlexUI::Clipboard.new(success: @clipboard_success, error: @clipboard_error, class: 'relative') do
                 render PhlexUI::Clipboard::Source.new do
                     codeblock
                 end
@@ -50,7 +52,6 @@ module PhlexUI
         end
 
         def codeblock
-            # Code block
             div(**attrs) do
                 div(class: "after:content-none") do
                     pre do
