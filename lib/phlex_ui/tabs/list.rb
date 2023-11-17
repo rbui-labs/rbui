@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PhlexUI
-    class Form::Spacer < Base
+    class Tabs::List < Base
         def template(&)
             div(**attrs, &)
         end
@@ -10,7 +10,7 @@ module PhlexUI
 
         def default_attrs
             {
-                class: "space-y-4"
+                class: "inline-flex h-9 items-center justify-center rounded-lg bg-muted-background p-1 text-muted-text"
             }
         end
     end
