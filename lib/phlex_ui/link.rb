@@ -2,7 +2,7 @@
 
 module PhlexUI
     class Link < Base
-        def initialize(href: "#", variant: :primary, size: :md, icon: false, **attrs)
+        def initialize(href: "#", variant: :link, size: :md, icon: false, **attrs)
             @href = href
             @variant = variant.to_sym
             @size = size.to_sym
