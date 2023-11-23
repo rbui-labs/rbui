@@ -10,7 +10,7 @@ module PhlexUI
 
         def default_attrs
             {
-                class: "flex h-full w-full items-center justify-center rounded-full bg-muted-background"
+                class: "flex h-full w-full items-center justify-center rounded-full bg-muted"
             }
         end
     end

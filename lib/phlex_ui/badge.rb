@@ -9,9 +9,9 @@ module PhlexUI
         }
 
         COLORS = {
-            primary: "text-primary bg-primary/10 ring-primary/20",
+            primary: "text-primary bg-primary/5 ring-primary/20",
             secondary: "text-secondary bg-secondary/10 ring-secondary/20",
-            outline: "text-text bg-background ring-border",
+            outline: "text-foreground bg-background ring-border",
             destructive: "text-destructive bg-destructive/10 ring-destructive/20",
             success: "text-success bg-success/10 ring-success/20",
             warning: "text-warning bg-warning/10 ring-warning/20",

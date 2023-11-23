@@ -10,7 +10,7 @@ module PhlexUI
 
         def default_attrs
             {
-                class: "border-b transition-colors hover:bg-muted-background hover:bg-opacity-50 data-[state=selected]:bg-muted-background"
+                class: "border-b transition-colors hover:bg-muted hover:bg-opacity-50 data-[state=selected]:bg-muted"
             }
         end
     end
