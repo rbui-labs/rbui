@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "phlex_ui"
-  s.version     = "0.1.0"
+  s.version     = "0.1.1"
   s.summary     = "PhlexUI is a UI Component Library for Ruby developers."
   s.description = "PhlexUI is a UI Component Library for Ruby developers. Built on top of the Phlex Framework."
   s.authors     = ["George Kettle"]
