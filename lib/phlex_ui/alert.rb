@@ -16,18 +16,18 @@ module PhlexUI
         def colors
             case @variant
             when nil
-                'ring-border bg-muted-background text-text [&>svg]:opacity-80'
+                'ring-border bg-muted text-foreground [&>svg]:opacity-80'
             when :warning
-                'ring-warning/20 bg-warning/10 text-warning [&>svg]:text-warning/80'
+                'ring-warning/20 bg-warning/5 text-warning [&>svg]:text-warning/80'
             when :success
-                'ring-success/20 bg-success/10 text-success [&>svg]:text-success/80'
+                'ring-success/20 bg-success/5 text-success [&>svg]:text-success/80'
             when :destructive
-                'ring-destructive/10 dark:ring-destructive/20 text-destructive bg-destructive/10 [&>svg]:text-destructive/80'
+                'ring-destructive/20 bg-destructive/5 text-destructive [&>svg]:text-destructive/80'
             end
         end
 
         def default_attrs
-            base_classes = 'relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8'
+            base_classes = 'backdrop-brightness-110 relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8'
             {
                 class: tokens(base_classes, colors),
             }

@@ -10,7 +10,7 @@ module PhlexUI
 
         def default_attrs
             {
-                class: "border-t bg-muted-background bg-opacity-50 font-medium[& amp;>tr]:last:border-b-0"
+                class: "border-t bg-muted bg-opacity-50 font-medium[& amp;>tr]:last:border-b-0"
             }
         end
     end

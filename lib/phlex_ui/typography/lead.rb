@@ -10,7 +10,7 @@ module PhlexUI
 
         def default_attrs
             {
-               class: "text-xl text-muted-text" 
+               class: "text-xl text-muted-foreground" 
             }
         end
     end
