@@ -17,7 +17,7 @@ module PhlexUI
             {
                 data: {
                     controller: 'tabs',
-                    tabs_default_value_value: @default
+                    tabs_active_value: @default
                 }
             }
         end
