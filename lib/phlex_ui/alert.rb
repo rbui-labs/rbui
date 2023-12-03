@@ -16,7 +16,7 @@ module PhlexUI
         def colors
             case @variant
             when nil
-                'ring-border bg-muted text-foreground [&>svg]:opacity-80'
+                'ring-border bg-muted/20 text-foreground [&>svg]:opacity-80'
             when :warning
                 'ring-warning/20 bg-warning/5 text-warning [&>svg]:text-warning/80'
             when :success
@@ -27,7 +27,7 @@ module PhlexUI
         end
 
         def default_attrs
-            base_classes = 'relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8'
+            base_classes = 'backdrop-blur relative w-full ring-1 ring-inset rounded-lg px-4 py-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-8'
             {
                 class: tokens(base_classes, colors),
             }
