@@ -12,7 +12,8 @@ module PhlexUI
             {
                 data: {
                     popover_target: 'trigger'
-                }
+                },
+                class: 'inline-block'
             }
         end
     end

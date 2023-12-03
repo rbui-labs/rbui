@@ -12,7 +12,8 @@ module PhlexUI
             {
                 data: { 
                     action: "click->dialog#open"
-                }
+                },
+                class: 'inline-block'
             }
         end
     end
