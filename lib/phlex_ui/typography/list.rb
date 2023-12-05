@@ -37,7 +37,7 @@ module PhlexUI
         def default_attrs
             {
                 class: tokens(
-                    "my-6 ml-6 [&>li]:mt-2 indent-2",
+                    "my-6 ml-6 [&>li]:mt-2 [&>li]:pl-2",
                     numbered?: "list-decimal marker:font-medium",
                     not_numbered?: "list-disc"
                 )
