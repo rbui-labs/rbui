@@ -15,7 +15,7 @@ module PhlexUI
 
         def default_attrs
             {
-                class: "text-primary font-semibold hover:underline underline-offset-4 cursor-pointer"
+                class: "text-primary font-medium hover:underline underline-offset-4 cursor-pointer"
             }
         end
     end
