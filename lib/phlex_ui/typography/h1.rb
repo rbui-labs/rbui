@@ -10,7 +10,7 @@ module PhlexUI
 
         def default_attrs
             {
-                class: "scroll-m-20 text-3xl font-semibold leading-normal lg:leading-normal tracking-tight lg:text-4xl"
+                class: "scroll-m-20 text-3xl font-bold leading-normal lg:leading-normal tracking-tight lg:text-4xl"
             }
         end
     end
