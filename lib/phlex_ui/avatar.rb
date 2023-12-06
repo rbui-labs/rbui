@@ -10,35 +10,17 @@ module PhlexUI
             xl: "h-20 w-20 text-3xl"
         }
 
-        def initialize(size: :md, src: nil, alt: nil, initials: nil, **attrs)
+        def initialize(size: :md, **attrs)
             @size = size
-            @src = src
-            @alt = alt
-            @initials = initials
             @size_classes = SIZES[@size]
             super(**attrs)
         end
 
-        def template(&block)
-            if block_given?
-                span(**attrs, &block)
-            else
-                span(**attrs) do
-                    render_image if @src
-                    render_initials
-                end
-            end
+        def template(&)
+            span(**attrs, &)
         end
 
         private
-
-        def render_image
-            render ::PhlexUI::Avatar::Image.new(src: @src, alt: @alt)
-        end
-
-        def render_initials
-            render ::PhlexUI::Avatar::Fallback.new { @initials }
-        end
 
         def default_attrs
             {
