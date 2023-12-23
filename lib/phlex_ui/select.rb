@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 module PhlexUI
-  class DropdownMenu < Base
+  class Select < Base
     def initialize(options: {}, **attrs)
       @options = options
       @options[:trigger] ||= "click"
+      @options[:duration] ||= [500, 0]
+      @options[:placement] ||= "bottom"
       super(**attrs)
     end
 
