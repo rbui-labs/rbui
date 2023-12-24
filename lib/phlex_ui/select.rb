@@ -6,7 +6,7 @@ module PhlexUI
       @options = options
       @options[:trigger] ||= "click"
       @options[:duration] ||= [500, 0]
-      @options[:placement] ||= "bottom"
+      @options[:placement] ||= "bottom-start"
       super(**attrs)
     end
 
@@ -20,8 +20,10 @@ module PhlexUI
       {
         data: {
           controller: "popover",
+          popover_match_width_value: "true",
           popover_options_value: @options.to_json
-        }
+        },
+        class: 'w-full'
       }
     end
   end

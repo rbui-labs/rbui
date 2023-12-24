@@ -7,8 +7,10 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template
-      span(**attrs) { @placeholder }
+    def template(&block)
+      span(**attrs) do
+        block_given? ? block.call : @placeholder
+      end
     end
 
     private
