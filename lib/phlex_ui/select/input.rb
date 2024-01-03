@@ -10,9 +10,9 @@ module PhlexUI
 
     def default_attrs
       {
-        class: 'hidden',
+        class: "hidden",
         data: {
-          controller: "input",
+          controller: "input"
         }
       }
     end

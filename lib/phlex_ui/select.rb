@@ -23,7 +23,7 @@ module PhlexUI
           popover_match_width_value: "true",
           popover_options_value: @options.to_json
         },
-        class: 'w-full'
+        class: "w-full"
       }
     end
   end

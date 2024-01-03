@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Select::Builder < Base
-    def initialize(object, method, collection: [], placeholder: '', value: nil, input_attrs: {}, trigger_attrs: {}, value_attrs: {}, content_attrs: {}, group_attrs: {}, item_attrs: {}, **attrs)
+    def initialize(object, method, collection: [], placeholder: "", value: nil, input_attrs: {}, trigger_attrs: {}, value_attrs: {}, content_attrs: {}, group_attrs: {}, item_attrs: {}, **attrs)
       @object = set_object(object)
       @method = method
       @collection = collection
@@ -19,7 +19,7 @@ module PhlexUI
 
     def template
       render PhlexUI::Select.new(**attrs) do
-        render PhlexUI::Select::Input.new(value: @object.send(@method), id: select_id, name: input_name, type: 'hidden', **@input_attrs)
+        render PhlexUI::Select::Input.new(value: @object.send(@method), id: select_id, name: input_name, type: "hidden", **@input_attrs)
         render PhlexUI::Select::Trigger.new(**@trigger_attrs) do
           if @value
             render PhlexUI::Select::Value.new(id: select_id, **@value_attrs) { @collection.find { |choice| choice[1] == @value }[0] }

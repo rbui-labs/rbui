@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
 module PhlexUI
-    class Collapsible < Base
-        def initialize(open: false, **attrs)
-            @open = open
-            super(**attrs)
-        end
-
-        def template(&)
-            div(**attrs, &)
-        end
-
-        private
-
-        def default_attrs
-            {
-                data: { 
-                    controller: 'collapsible', 
-                    collapsible_open_value: @open
-                }
-            }
-        end
+  class Collapsible < Base
+    def initialize(open: false, **attrs)
+      @open = open
+      super(**attrs)
     end
+
+    def template(&)
+      div(**attrs, &)
+    end
+
+    private
+
+    def default_attrs
+      {
+        data: {
+          controller: "collapsible",
+          collapsible_open_value: @open
+        }
+      }
+    end
+  end
 end
