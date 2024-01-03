@@ -86,8 +86,7 @@ PLATFORMS
 DEPENDENCIES
   phlex_ui!
   rake
-  ruby-next (~> 1.0)
-  standard (~> 1.0)
+  standard
 
 BUNDLED WITH
    2.5.3

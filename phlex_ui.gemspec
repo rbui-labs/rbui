@@ -25,6 +25,5 @@ Gem::Specification.new do |s|
   end
 
   s.add_development_dependency "rake"
-  s.add_development_dependency "ruby-next", "~> 1.0"
   s.add_development_dependency "standard"
 end
