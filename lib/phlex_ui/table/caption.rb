@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Table::Caption < Base
-    def template(&)
-      caption(**attrs, &)
+    def template(&block)
+      caption(**attrs, &block)
     end
 
     private

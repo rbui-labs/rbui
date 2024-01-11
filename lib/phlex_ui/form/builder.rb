@@ -21,8 +21,8 @@ module PhlexUI
       end
     end
 
-    def button(**button_attrs, &)
-      render PhlexUI::Button.new(**button_attrs, &)
+    def button(**button_attrs, &block)
+      render PhlexUI::Button.new(**button_attrs, &block)
     end
 
     private

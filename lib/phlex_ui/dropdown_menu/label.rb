@@ -2,8 +2,8 @@
 
 module PhlexUI
   class DropdownMenu::Label < Base
-    def template(&)
-      h3(**attrs, &)
+    def template(&block)
+      h3(**attrs, &block)
     end
 
     private

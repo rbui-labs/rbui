@@ -2,9 +2,9 @@
 
 module PhlexUI
   class DropdownMenu::Content < Base
-    def template(&)
+    def template(&block)
       template_tag(data: {popover_target: "content"}) do
-        div(**attrs, &)
+        div(**attrs, &block)
       end
     end
 

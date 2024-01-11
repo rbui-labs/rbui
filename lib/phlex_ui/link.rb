@@ -10,8 +10,8 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&)
-      a(href: @href, **attrs, &)
+    def template(&block)
+      a(href: @href, **attrs, &block)
     end
 
     private

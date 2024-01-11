@@ -8,9 +8,9 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&)
+    def template(&block)
       div(**attrs) do
-        div(&)
+        div(&block)
         success_popover
         error_popover
       end

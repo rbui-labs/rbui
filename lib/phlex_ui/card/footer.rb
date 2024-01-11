@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Card::Footer < Base
-    def template(&)
-      div(**attrs, &)
+    def template(&block)
+      div(**attrs, &block)
     end
 
     private

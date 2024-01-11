@@ -2,8 +2,8 @@
 
 module PhlexUI
   class ShortcutKey < Base
-    def template(&)
-      kbd(**attrs, &)
+    def template(&block)
+      kbd(**attrs, &block)
     end
 
     private

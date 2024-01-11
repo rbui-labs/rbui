@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Table::Head < Base
-    def template(&)
-      th(**attrs, &)
+    def template(&block)
+      th(**attrs, &block)
     end
 
     private

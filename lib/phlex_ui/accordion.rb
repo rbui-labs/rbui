@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Accordion < Base
-    def template(&)
-      div(**attrs, &)
+    def template(&block)
+      div(**attrs, &block)
     end
 
     private

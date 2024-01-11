@@ -2,18 +2,18 @@
 
 module PhlexUI
   class ThemeToggle < Base
-    def template(&)
-      div(**attrs, &)
+    def template(&block)
+      div(**attrs, &block)
     end
 
-    def light_mode(**user_attrs, &)
+    def light_mode(**user_attrs, &block)
       light_attrs = PhlexUI::AttributeMerger.new(default_light_attrs, user_attrs).call
-      div(**light_attrs, &)
+      div(**light_attrs, &block)
     end
 
-    def dark_mode(**user_attrs, &)
+    def dark_mode(**user_attrs, &block)
       dark_attrs = PhlexUI::AttributeMerger.new(default_dark_attrs, user_attrs).call
-      div(**dark_attrs, &)
+      div(**dark_attrs, &block)
     end
 
     private

@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Hint < Base
-    def template(&)
-      p(**attrs, &)
+    def template(&block)
+      p(**attrs, &block)
     end
 
     private
