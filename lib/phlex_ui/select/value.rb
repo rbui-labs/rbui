@@ -9,7 +9,7 @@ module PhlexUI
 
     def template(&block)
       span(**attrs) do
-        block_given? ? block.call : @placeholder
+        block ? block.call : @placeholder
       end
     end
 
@@ -18,9 +18,9 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "text",
+          controller: "text"
         },
-        class: 'pointer-events-none'
+        class: "pointer-events-none"
       }
     end
   end
