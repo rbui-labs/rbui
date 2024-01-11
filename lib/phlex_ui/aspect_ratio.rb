@@ -9,12 +9,12 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&)
+    def template(&block)
       div(
         class: "relative w-full",
         style: "padding-bottom: #{padding_bottom}%;"
       ) do
-        div(**attrs, &)
+        div(**attrs, &block)
       end
     end
 

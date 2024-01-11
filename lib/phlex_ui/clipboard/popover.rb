@@ -7,9 +7,9 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&)
+    def template(&block)
       template_tag(data: {clipboard_target: clipboard_target}) do
-        div(**attrs, &)
+        div(**attrs, &block)
       end
     end
 

@@ -2,11 +2,11 @@
 
 module PhlexUI
   class AlertDialog::Content < Base
-    def template(&)
+    def template(&block)
       template_tag(**attrs) do
         div(data: {controller: "dismissable"}) do
           background
-          container(&)
+          container(&block)
         end
       end
     end
@@ -22,7 +22,7 @@ module PhlexUI
       )
     end
 
-    def container(&)
+    def container(&block)
       div(
         role: "alertdialog",
         data_state: "open",

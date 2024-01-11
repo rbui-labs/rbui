@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Typography::Small < Base
-    def template(&)
-      small(**attrs, &)
+    def template(&block)
+      small(**attrs, &block)
     end
 
     private

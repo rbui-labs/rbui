@@ -2,9 +2,9 @@
 
 module PhlexUI
   class Accordion::DefaultTrigger < Base
-    def template(&)
+    def template(&block)
       div(class: "flex items-center justify-between w-full") do
-        p(&)
+        p(&block)
         render ::PhlexUI::Accordion::Icon.new
       end
     end

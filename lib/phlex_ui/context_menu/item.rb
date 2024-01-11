@@ -11,7 +11,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&)
+    def template(&block)
       a(**attrs) do
         render_checkmark if @checked
         yield

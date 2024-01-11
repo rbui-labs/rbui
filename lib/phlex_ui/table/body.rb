@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Table::Body < Base
-    def template(&)
-      tbody(**attrs, &)
+    def template(&block)
+      tbody(**attrs, &block)
     end
 
     private
