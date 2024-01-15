@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module PhlexUI::Components
-
   class Alert < Base
     def initialize(variant: nil, **attrs)
       @variant = variant
