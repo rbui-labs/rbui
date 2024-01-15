@@ -12,10 +12,17 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 2.7"
 
-  s.add_dependency "rails", ">= 7.1.2"
+  s.add_dependency "lookbook", ">= 2.2.0"
   s.add_dependency "phlex", "~> 1.7"
+  s.add_dependency "rails", ">= 7.1.2"
   s.add_dependency "rouge", "~> 4.2.0"
   s.add_dependency "zeitwerk", "~> 2.6"
+
+  s.add_development_dependency "magic_frozen_string_literal"
+  s.add_development_dependency "minitest"
+  s.add_development_dependency "minitest-reporters"
+  s.add_development_dependency "rake"
+  s.add_development_dependency "standard"
 
   # When gem is installed from source, we add `ruby-next` as a dependency
   # to auto-transpile source files during the first load
@@ -24,8 +31,4 @@ Gem::Specification.new do |s|
   else
     s.add_runtime_dependency "ruby-next-core", "~> 1.0"
   end
-
-  s.add_development_dependency "minitest", "~> 5.14"
-  s.add_development_dependency "rake"
-  s.add_development_dependency "standard"
 end

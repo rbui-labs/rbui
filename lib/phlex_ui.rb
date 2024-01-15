@@ -5,6 +5,7 @@ RubyNext::Language.setup_gem_load_path(transpile: true)
 
 require "phlex"
 require "zeitwerk"
+require "lookbook"
 
 loader = Zeitwerk::Loader.for_gem
 loader.inflector.inflect(
