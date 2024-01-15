@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+module PhlexUI::Components
+  class Hint < Base
+    def template(&block)
+      p(**attrs, &block)
+    end
+
+    private
+
+    def default_attrs
+      {
+        class: "text-[0.8rem] text-muted-foreground"
+      }
+    end
+  end
+end

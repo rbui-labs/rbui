@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 2.7"
 
+  s.add_dependency "rails", ">= 7.1.2"
   s.add_dependency "phlex", "~> 1.7"
   s.add_dependency "rouge", "~> 4.2.0"
   s.add_dependency "zeitwerk", "~> 2.6"
@@ -24,6 +25,7 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency "ruby-next-core", "~> 1.0"
   end
 
+  s.add_development_dependency "minitest", "~> 5.14"
   s.add_development_dependency "rake"
   s.add_development_dependency "standard"
 end
