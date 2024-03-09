@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module PhlexUI
-  class Pagination::Pages < Base
+  class Pagination::Content < Base
     def template(&block)
       ul(**attrs, &block)
     end
