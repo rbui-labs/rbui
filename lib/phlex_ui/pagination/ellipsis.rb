@@ -34,7 +34,7 @@ module PhlexUI
 
     def default_attrs
       {
-        aria: { hidden: true },
+        aria: {hidden: true},
         class: "flex h-9 w-9 items-center justify-center"
       }
     end

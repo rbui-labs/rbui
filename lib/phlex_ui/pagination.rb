@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        aria: { label: "pagination" },
+        aria: {label: "pagination"},
         class: "mx-auto flex w-full justify-center",
         role: "navigation"
       }
