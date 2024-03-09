@@ -20,7 +20,7 @@ module PhlexUI
         div(data: {controller: "dismissable"}) do
           backdrop
           div(**attrs) do
-            block.call if block
+            block&.call
             close_button
           end
         end
