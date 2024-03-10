@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phlex_ui (0.1.6)
+    phlex_ui (0.1.7)
       phlex (~> 1.7)
       rouge (~> 4.2.0)
       ruby-next (~> 1.0)
