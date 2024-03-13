@@ -11,7 +11,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          popover_target: "trigger"
+          ui_popover_target: "trigger"
         },
         class: "inline-block"
       }

@@ -16,8 +16,8 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "popover",
-          popover_options_value: @options.to_json
+          controller: "ui-popover",
+          ui_popover_options_value: @options.to_json
         }
       }
     end

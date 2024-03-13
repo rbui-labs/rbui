@@ -3,7 +3,7 @@
 module PhlexUI
   class Popover::Content < Base
     def template(&block)
-      template_tag(data: {popover_target: "content"}) do
+      template_tag(data: {ui_popover_target: "content"}) do
         div(**attrs, &block)
       end
     end
