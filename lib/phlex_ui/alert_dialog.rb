@@ -7,8 +7,8 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&block)
-      div(**attrs, &block)
+    def template(&)
+      div(**attrs, &)
     end
 
     private
@@ -17,7 +17,7 @@ module PhlexUI
       {
         data: {
           controller: "alert-dialog",
-          alert_dialog_open_value: @open
+          alert_dialog_open_value: @open.to_s
         },
         class: "inline-block"
       }
