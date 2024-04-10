@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Hint < Base
-    def template(&block)
+    def view_template(&block)
       p(**attrs, &block)
     end
 

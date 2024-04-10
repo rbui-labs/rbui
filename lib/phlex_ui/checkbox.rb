@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Checkbox < Base
-    def template
+    def view_template
       input(**attrs)
     end
 

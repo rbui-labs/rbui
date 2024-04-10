@@ -21,7 +21,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template
+    def view_template
       style { ROUGE_CSS.html_safe } # For faster load times, move this to the head of your document. (Also move ROUGE_CSS value to head of document)
       if @clipboard
         with_clipboard

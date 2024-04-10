@@ -2,7 +2,7 @@
 
 module PhlexUI
   class ShortcutKey < Base
-    def template(&block)
+    def view_template(&block)
       kbd(**attrs, &block)
     end
 

@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Tabs::List < Base
-    def template(&block)
+    def view_template(&block)
       div(**attrs, &block)
     end
 

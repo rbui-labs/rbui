@@ -8,7 +8,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&block)
+    def view_template(&block)
       if @items.empty?
         list(**attrs, &block)
       else

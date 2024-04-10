@@ -4,7 +4,7 @@ module PhlexUI
   class Calendar::Weekdays < Base
     DAYS = %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday].freeze
 
-    def template
+    def view_template
       template_tag(data: {calendar_target: "weekdaysTemplate"}) do
         thead(**attrs) do
           tr(class: "flex") do

@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Typography::InlineCode < Base
-    def template(&block)
+    def view_template(&block)
       code(**attrs, &block)
     end
 

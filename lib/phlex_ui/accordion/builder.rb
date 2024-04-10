@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Accordion::Builder < Base
-    def template(&block)
+    def view_template(&block)
       render PhlexUI::Accordion.new(**attrs) do
         block.call
       end
