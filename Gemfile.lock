@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     phlex_ui (0.1.7)
-      phlex (~> 1.7)
+      phlex (~> 1.10)
       rouge (~> 4.2.0)
       ruby-next (~> 1.0)
       zeitwerk (~> 2.6)
@@ -11,11 +11,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    cgi (0.4.1)
-    concurrent-ruby (1.2.2)
     diff-lcs (1.5.0)
-    erb (4.0.3)
-      cgi (>= 0.3.3)
     json (2.7.1)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
@@ -24,10 +20,7 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
-    phlex (1.9.0)
-      concurrent-ruby (~> 1.2)
-      erb (>= 4)
-      zeitwerk (~> 2.6)
+    phlex (1.10.0)
     racc (1.7.3)
     rainbow (3.1.1)
     rake (13.1.0)
