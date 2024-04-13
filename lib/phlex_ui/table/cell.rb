@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Table::Cell < Base
-    def template(&block)
+    def view_template(&block)
       td(**attrs, &block)
     end
 

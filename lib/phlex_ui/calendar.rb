@@ -9,7 +9,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template
+    def view_template
       div(**attrs) do
         render PhlexUI::Calendar::Header.new do
           render PhlexUI::Calendar::Title.new

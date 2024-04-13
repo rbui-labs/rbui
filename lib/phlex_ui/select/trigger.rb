@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Select::Trigger < Base
-    def template(&block)
+    def view_template(&block)
       button(**attrs) do
         block&.call
         icon

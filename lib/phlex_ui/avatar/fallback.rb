@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Avatar::Fallback < Base
-    def template(&block)
+    def view_template(&block)
       span(**attrs, &block)
     end
 

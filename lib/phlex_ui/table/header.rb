@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Table::Header < Base
-    def template(&block)
+    def view_template(&block)
       thead(**attrs, &block)
     end
 

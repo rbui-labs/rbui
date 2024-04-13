@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Accordion::Icon < Base
-    def template(&block)
+    def view_template(&block)
       span(**attrs) do
         if block
           block.call

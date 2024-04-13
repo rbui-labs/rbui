@@ -2,7 +2,7 @@
 
 module PhlexUI
   class AlertDialog::Action < Base
-    def template(&block)
+    def view_template(&block)
       render PhlexUI::Button.new(**attrs, &block)
     end
 

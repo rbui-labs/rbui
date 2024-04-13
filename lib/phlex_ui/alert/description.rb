@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Alert::Description < Base
-    def template(&block)
+    def view_template(&block)
       div(**attrs, &block)
     end
 

@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Command::Empty < Base
-    def template(&block)
+    def view_template(&block)
       div(**attrs, &block)
     end
 

@@ -10,7 +10,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template
+    def view_template
       render PhlexUI::Avatar.new(size: @size, **attrs) do
         render_image if @src
         render_initials if @initials

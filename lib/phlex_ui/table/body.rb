@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Table::Body < Base
-    def template(&block)
+    def view_template(&block)
       tbody(**attrs, &block)
     end
 
