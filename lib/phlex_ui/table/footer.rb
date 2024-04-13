@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Table::Footer < Base
-    def template(&block)
-      tfoot(**attrs, &block)
+    def template(&)
+      tfoot(**attrs, &)
     end
 
     private

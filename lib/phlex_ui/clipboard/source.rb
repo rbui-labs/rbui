@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Clipboard::Source < Base
-    def template(&block)
-      div(**attrs, &block)
+    def template(&)
+      div(**attrs, &)
     end
 
     private

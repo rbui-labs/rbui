@@ -45,8 +45,8 @@ module PhlexUI
       super(**args)
     end
 
-    def template(&block)
-      span(**attrs, &block)
+    def template(&)
+      span(**attrs, &)
     end
 
     private

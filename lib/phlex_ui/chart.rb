@@ -7,8 +7,8 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&block)
-      canvas(**attrs, &block)
+    def template(&)
+      canvas(**attrs, &)
     end
 
     private

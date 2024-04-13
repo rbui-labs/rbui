@@ -8,9 +8,9 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&block)
+    def template(&)
       if @items.empty?
-        list(**attrs, &block)
+        list(**attrs, &)
       else
         list(**attrs) do
           @items.each do |item|
@@ -22,11 +22,11 @@ module PhlexUI
 
     private
 
-    def list(**attrs, &block)
+    def list(**attrs, &)
       if numbered?
-        ol(**attrs, &block)
+        ol(**attrs, &)
       else
-        ul(**attrs, &block)
+        ul(**attrs, &)
       end
     end
 

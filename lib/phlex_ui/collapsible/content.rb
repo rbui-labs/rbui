@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Collapsible::Content < Base
-    def template(&block)
-      div(**attrs, &block)
+    def template(&)
+      div(**attrs, &)
     end
 
     private

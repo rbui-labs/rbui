@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Sheet::Footer < Base
-    def template(&block)
-      div(**attrs, &block)
+    def template(&)
+      div(**attrs, &)
     end
 
     private

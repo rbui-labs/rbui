@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Sheet::Title < Base
-    def template(&block)
-      h3(**attrs, &block)
+    def template(&)
+      h3(**attrs, &)
     end
 
     private

@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Form < Base
-    def template(&block)
-      form(**attrs, &block)
+    def template(&)
+      form(**attrs, &)
     end
 
     private

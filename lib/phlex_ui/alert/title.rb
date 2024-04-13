@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Alert::Title < Base
-    def template(&block)
-      h5(**attrs, &block)
+    def template(&)
+      h5(**attrs, &)
     end
 
     private

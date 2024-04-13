@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Table::Cell < Base
-    def template(&block)
-      td(**attrs, &block)
+    def template(&)
+      td(**attrs, &)
     end
 
     private

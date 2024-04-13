@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Select::Group < Base
-    def template(&block)
-      div(**attrs, &block)
+    def template(&)
+      div(**attrs, &)
     end
 
     private

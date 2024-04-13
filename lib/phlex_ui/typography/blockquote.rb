@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Typography::Blockquote < Base
-    def template(&block)
-      blockquote(**attrs, &block)
+    def template(&)
+      blockquote(**attrs, &)
     end
 
     private

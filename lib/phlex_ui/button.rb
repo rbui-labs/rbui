@@ -9,8 +9,8 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&block)
-      button(**attrs, &block)
+    def template(&)
+      button(**attrs, &)
     end
 
     private

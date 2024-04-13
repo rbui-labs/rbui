@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Pagination::Content < Base
-    def template(&block)
-      ul(**attrs, &block)
+    def template(&)
+      ul(**attrs, &)
     end
 
     private
