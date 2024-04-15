@@ -2,7 +2,7 @@
 
 module PhlexUI
   class AlertDialog::Cancel < Base
-    def template(&)
+    def view_template(&)
       render PhlexUI::Button.new(**attrs, &)
     end
 

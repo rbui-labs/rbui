@@ -16,7 +16,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&)
+    def view_template(&)
       span(**attrs, &)
     end
 

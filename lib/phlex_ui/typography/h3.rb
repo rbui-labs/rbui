@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Typography::H3 < Base
-    def template(&)
+    def view_template(&)
       h3(**attrs, &)
     end
 

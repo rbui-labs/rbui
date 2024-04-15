@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Form::Item < Base
-    def template(&)
+    def view_template(&)
       div(**attrs, &)
     end
 

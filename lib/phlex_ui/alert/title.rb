@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Alert::Title < Base
-    def template(&)
+    def view_template(&)
       h5(**attrs, &)
     end
 

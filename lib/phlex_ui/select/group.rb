@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Select::Group < Base
-    def template(&)
+    def view_template(&)
       div(**attrs, &)
     end
 

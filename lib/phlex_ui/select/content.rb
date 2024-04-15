@@ -2,12 +2,12 @@
 
 module PhlexUI
   class Select::Content < Base
-    def initialize(outlet_id: nil, **attrs)
+    def initialize(outlet_id:, **attrs)
       @outlet_id = outlet_id
       super(**attrs)
     end
 
-    def template(&block)
+    def view_template(&block)
       template_tag(data: {popover_target: "content"}) do
         div(**attrs, &block)
       end

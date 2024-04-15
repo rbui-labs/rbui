@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Pagination::Content < Base
-    def template(&)
+    def view_template(&)
       ul(**attrs, &)
     end
 

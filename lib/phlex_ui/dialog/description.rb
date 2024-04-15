@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Dialog::Description < Base
-    def template(&)
+    def view_template(&)
       p(**attrs, &)
     end
 

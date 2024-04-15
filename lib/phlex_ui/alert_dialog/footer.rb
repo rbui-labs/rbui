@@ -2,7 +2,7 @@
 
 module PhlexUI
   class AlertDialog::Footer < Base
-    def template(&)
+    def view_template(&)
       div(**attrs, &)
     end
 

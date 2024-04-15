@@ -7,7 +7,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template
+    def view_template
       input_container do
         search_icon
         input(**attrs)

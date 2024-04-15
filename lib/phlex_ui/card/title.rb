@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Card::Title < Base
-    def template(&)
+    def view_template(&)
       h3(**attrs, &)
     end
 

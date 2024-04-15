@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Typography::Muted < Base
-    def template(&)
+    def view_template(&)
       p(**attrs, &)
     end
 

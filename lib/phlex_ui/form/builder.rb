@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Form::Builder < Base
-    def template(&block)
+    def view_template(&block)
       render PhlexUI::Form.new(**attrs) do
         render PhlexUI::Form::Spacer.new do
           block.call

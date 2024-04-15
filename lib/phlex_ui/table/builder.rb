@@ -13,7 +13,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&block)
+    def view_template(&block)
       render PhlexUI::Table.new(**attrs) do
         header
         body

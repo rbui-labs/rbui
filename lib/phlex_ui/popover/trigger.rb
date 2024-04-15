@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Popover::Trigger < Base
-    def template(&)
+    def view_template(&)
       div(**attrs, &)
     end
 

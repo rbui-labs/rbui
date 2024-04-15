@@ -9,7 +9,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&block)
+    def view_template(&block)
       div(
         class: "relative w-full",
         style: "padding-bottom: #{padding_bottom}%;"

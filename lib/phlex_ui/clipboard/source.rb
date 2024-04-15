@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Clipboard::Source < Base
-    def template(&)
+    def view_template(&)
       div(**attrs, &)
     end
 

@@ -16,7 +16,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template
+    def view_template
       template_tag(data: {dialog_target: "content"}) do
         div(data: {controller: "dismissable"}) do
           backdrop

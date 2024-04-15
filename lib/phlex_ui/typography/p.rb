@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Typography::P < Base
-    def template(&)
+    def view_template(&)
       p(**attrs, &)
     end
 

@@ -2,7 +2,7 @@
 
 module PhlexUI
   class HoverCard::Trigger < Base
-    def template(&)
+    def view_template(&)
       div(**attrs, &)
     end
 

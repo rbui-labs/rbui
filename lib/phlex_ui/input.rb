@@ -8,7 +8,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template
+    def view_template
       input(type: @type, **attrs)
       render PhlexUI::InputError.new { @error } if @error
     end

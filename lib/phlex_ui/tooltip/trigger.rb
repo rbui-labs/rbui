@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Tooltip::Trigger < Base
-    def template(&)
+    def view_template(&)
       div(**attrs, &)
     end
 

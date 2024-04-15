@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Card::Description < Base
-    def template(&)
+    def view_template(&)
       p(**attrs, &)
     end
 

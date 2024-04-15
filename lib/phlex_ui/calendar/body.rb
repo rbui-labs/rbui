@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Calendar::Body < Base
-    def template
+    def view_template
       table(**attrs)
     end
 
