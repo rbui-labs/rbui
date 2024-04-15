@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Table < Base
-    def template(&block)
+    def view_template(&block)
       div(class: "relative w-full overflow-auto") do
         table(**attrs, &block)
       end

@@ -7,7 +7,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template(&block)
+    def view_template(&block)
       div(**attrs) do
         render_header if @title
         render_items(&block)

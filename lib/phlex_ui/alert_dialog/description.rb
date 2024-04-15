@@ -2,7 +2,7 @@
 
 module PhlexUI
   class AlertDialog::Description < Base
-    def template(&block)
+    def view_template(&block)
       p(**attrs, &block)
     end
 

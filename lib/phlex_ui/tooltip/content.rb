@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Tooltip::Content < Base
-    def template(&block)
+    def view_template(&block)
       template_tag(data: {popover_target: "content"}) do
         div(**attrs, &block)
       end

@@ -17,7 +17,7 @@ module PhlexUI
       super(**attrs)
     end
 
-    def template
+    def view_template
       render PhlexUI::Select.new(**attrs) do
         render PhlexUI::Select::Input.new(value: @object.send(@method), id: select_id, name: input_name, type: "hidden", **@input_attrs)
         render PhlexUI::Select::Trigger.new(**@trigger_attrs) do

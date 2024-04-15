@@ -2,7 +2,7 @@
 
 module PhlexUI
   class AlertDialog::Content < Base
-    def template(&block)
+    def view_template(&block)
       template_tag(**attrs) do
         div(data: {controller: "dismissable"}) do
           background

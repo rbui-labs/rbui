@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Typography::Lead < Base
-    def template(&block)
+    def view_template(&block)
       p(**attrs, &block)
     end
 

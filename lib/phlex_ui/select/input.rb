@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Select::Input < Base
-    def template
+    def view_template
       render PhlexUI::Input.new(**attrs)
     end
 

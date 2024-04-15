@@ -2,7 +2,7 @@
 
 module PhlexUI
   class Pagination::Ellipsis < Base
-    def template(&block)
+    def view_template(&block)
       li do
         span(**attrs) do
           icon

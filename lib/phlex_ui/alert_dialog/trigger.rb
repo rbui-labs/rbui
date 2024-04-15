@@ -2,7 +2,7 @@
 
 module PhlexUI
   class AlertDialog::Trigger < Base
-    def template(&block)
+    def view_template(&block)
       div(**attrs, &block)
     end
 
