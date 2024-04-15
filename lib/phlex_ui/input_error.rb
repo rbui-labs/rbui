@@ -2,8 +2,8 @@
 
 module PhlexUI
   class InputError < Base
-    def view_template(&block)
-      p(**attrs, &block)
+    def view_template(&)
+      p(**attrs, &)
     end
 
     private

@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Pagination < Base
-    def view_template(&block)
-      nav(**attrs, &block)
+    def view_template(&)
+      nav(**attrs, &)
     end
 
     private

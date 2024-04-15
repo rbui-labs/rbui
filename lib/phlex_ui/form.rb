@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Form < Base
-    def view_template(&block)
-      form(**attrs, &block)
+    def view_template(&)
+      form(**attrs, &)
     end
 
     private

@@ -7,8 +7,8 @@ module PhlexUI
       @href = href
     end
 
-    def view_template(&block)
-      a(href: @href, **attrs, &block)
+    def view_template(&)
+      a(href: @href, **attrs, &)
     end
 
     private

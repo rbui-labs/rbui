@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Label < Base
-    def view_template(&block)
-      label(**attrs, &block)
+    def view_template(&)
+      label(**attrs, &)
     end
 
     private

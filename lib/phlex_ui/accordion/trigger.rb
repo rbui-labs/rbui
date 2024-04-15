@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Accordion::Trigger < Base
-    def view_template(&block)
-      button(**attrs, &block)
+    def view_template(&)
+      button(**attrs, &)
     end
 
     def default_attrs

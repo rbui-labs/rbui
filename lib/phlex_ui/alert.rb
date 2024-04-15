@@ -7,8 +7,8 @@ module PhlexUI
       super(**attrs) # must be called after variant is set
     end
 
-    def view_template(&block)
-      div(**attrs, &block)
+    def view_template(&)
+      div(**attrs, &)
     end
 
     private

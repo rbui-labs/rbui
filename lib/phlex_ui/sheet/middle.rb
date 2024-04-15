@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Sheet::Middle < Base
-    def view_template(&block)
-      div(**attrs, &block)
+    def view_template(&)
+      div(**attrs, &)
     end
 
     private

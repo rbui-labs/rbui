@@ -2,8 +2,8 @@
 
 module PhlexUI
   class ContextMenu::Trigger < Base
-    def view_template(&block)
-      div(**attrs, &block)
+    def view_template(&)
+      div(**attrs, &)
     end
 
     private

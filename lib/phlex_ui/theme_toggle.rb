@@ -2,8 +2,8 @@
 
 module PhlexUI
   class ThemeToggle < Base
-    def view_template(&block)
-      div(**attrs, &block)
+    def view_template(&)
+      div(**attrs, &)
     end
 
     def light_mode(**user_attrs, &)

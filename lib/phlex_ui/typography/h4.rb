@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Typography::H4 < Base
-    def view_template(&block)
-      h4(**attrs, &block)
+    def view_template(&)
+      h4(**attrs, &)
     end
 
     private

@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Typography::InlineCode < Base
-    def view_template(&block)
-      code(**attrs, &block)
+    def view_template(&)
+      code(**attrs, &)
     end
 
     private

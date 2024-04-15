@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Typography::ListItem < Base
-    def view_template(&block)
-      li(**attrs, &block)
+    def view_template(&)
+      li(**attrs, &)
     end
 
     private

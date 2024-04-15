@@ -2,8 +2,8 @@
 
 module PhlexUI
   class Select::Label < Base
-    def view_template(&block)
-      h3(**attrs, &block)
+    def view_template(&)
+      h3(**attrs, &)
     end
 
     private
