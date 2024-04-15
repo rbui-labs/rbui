@@ -6,14 +6,14 @@ module PhlexUI
       div(**attrs, &block)
     end
 
-    def light_mode(**user_attrs, &block)
+    def light_mode(**user_attrs, &)
       light_attrs = PhlexUI::AttributeMerger.new(default_light_attrs, user_attrs).call
-      div(**light_attrs, &block)
+      div(**light_attrs, &)
     end
 
-    def dark_mode(**user_attrs, &block)
+    def dark_mode(**user_attrs, &)
       dark_attrs = PhlexUI::AttributeMerger.new(default_dark_attrs, user_attrs).call
-      div(**dark_attrs, &block)
+      div(**dark_attrs, &)
     end
 
     private

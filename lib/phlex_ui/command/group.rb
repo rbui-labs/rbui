@@ -22,8 +22,8 @@ module PhlexUI
       end
     end
 
-    def render_items(&block)
-      div(group_items: "", role: "group", &block)
+    def render_items(&)
+      div(group_items: "", role: "group", &)
     end
 
     def default_attrs
