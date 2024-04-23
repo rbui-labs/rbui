@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 2.7"
 
+  s.add_runtime_dependency "activesupport"
   s.add_dependency "phlex", "~> 1.10"
   s.add_dependency "rouge", "~> 4.2.0"
   s.add_dependency "zeitwerk", "~> 2.6"
