@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phlex_ui (0.1.8)
+    phlex_ui (0.1.9)
       phlex (~> 1.10)
       rouge (~> 4.2.0)
       ruby-next (~> 1.0)
@@ -21,7 +21,7 @@ GEM
     parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
-    phlex (1.10.0)
+    phlex (1.10.2)
     racc (1.7.3)
     rainbow (3.1.1)
     rake (13.2.1)
