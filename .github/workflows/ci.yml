@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - "*"
+  push:
+    branches:
+      - main
+
+jobs:
+  standard:
+    name: StandardRB Check Action
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v4
+     - uses: ruby/setup-ruby@v1
+       with:
+         ruby-version: 3.3
+         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+     - run: bundle exec standardrb --format progress
+  tests:
+    strategy:
+        fail-fast: false
+        matrix:
+          os: ["ubuntu-latest"]
+          ruby-version:
+            - "3.2"
+            - "3.3"
+            - "head"
+    name: Running minitest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: false
+
+      - run: bundle install
+      - run: bundle exec rake test
