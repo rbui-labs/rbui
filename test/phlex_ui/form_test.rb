@@ -5,9 +5,28 @@ require "test_helper"
 class PhlexUI::FormTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
-  def test_render_with_default_attributes
-    output = render PhlexUI::Form.new
+  def test_render_with_all_items
+    output = phlex_context do
+      PhlexUI.Form do
+        PhlexUI.SheetMiddle do
+          PhlexUI.FormSpacer do
+            PhlexUI.FormItem do
+              PhlexUI.Label { "Name" }
+              PhlexUI.Input(placeholder: "Joel Drapper") { "Joel Drapper" }
+            end
+            PhlexUI.FormItem do
+              PhlexUI.Label { "Email" }
+              PhlexUI.Input(placeholder: "joel@drapper.me")
+            end
+          end
+        end
+        PhlexUI.SheetFooter do
+          PhlexUI.Button(variant: :outline, data: {action: "click->dismissable#dismiss"}) { "Cancel" }
+          PhlexUI.Button(type: "submit") { "Save" }
+        end
+      end
+    end
 
-    refute_empty(output)
+    assert_match(/Name/, output)
   end
 end
