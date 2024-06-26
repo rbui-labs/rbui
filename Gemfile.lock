@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     phlex_ui (0.1.10)
-      activesupport (~> 6.0)
+      activesupport (>= 6.0)
       phlex (~> 1.10)
       rouge (~> 4.2.0)
       zeitwerk (~> 2.6)
