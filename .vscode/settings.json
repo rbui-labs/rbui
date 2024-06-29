@@ -10,8 +10,5 @@
     "editor.formatOnType": true,
     "editor.semanticHighlighting.enabled": true,
     "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
-  },
-  "rubyLsp.rubyVersionManager": {
-    "identifier": "rbenv"
   }
 }

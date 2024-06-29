@@ -14,7 +14,12 @@
       "extensions": [
         "testdouble.vscode-standard-ruby",
         "Shopify.ruby-lsp"
-      ]
+      ],
+      "settings": {
+        "rubyLsp.rubyVersionManager": {
+          "identifier": "rbenv"
+        }
+      }
     }
   }
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
