@@ -5,9 +5,11 @@ require "test_helper"
 class PhlexUI::BadgeTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
-  def test_render_with_default_attributes
-    output = render PhlexUI::Badge.new
+  def test_render_with_all_items
+    output = phlex_context do
+      PhlexUI.Badge { "Badge" }
+    end
 
-    refute_empty(output)
+    assert_match(/Badge/, output)
   end
 end

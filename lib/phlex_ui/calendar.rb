@@ -11,14 +11,14 @@ module PhlexUI
 
     def view_template
       div(**attrs) do
-        render PhlexUI::Calendar::Header.new do
-          render PhlexUI::Calendar::Title.new
-          render PhlexUI::Calendar::Prev.new
-          render PhlexUI::Calendar::Next.new
+        PhlexUI.CalendarHeader do
+          PhlexUI.CalendarTitle
+          PhlexUI.CalendarPrev
+          PhlexUI.CalendarNext
         end
-        render PhlexUI::Calendar::Body.new # Where the calendar is rendered (Weekdays and Days)
-        render PhlexUI::Calendar::Weekdays.new # Template for the weekdays
-        render PhlexUI::Calendar::Days.new # Template for the days
+        PhlexUI.CalendarBody # Where the calendar is rendered (Weekdays and Days)
+        PhlexUI.CalendarWeekdays # Template for the weekdays
+        PhlexUI.CalendarDays # Template for the days
       end
     end
 
