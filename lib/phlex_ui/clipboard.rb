@@ -19,11 +19,11 @@ module PhlexUI
     private
 
     def success_popover
-      render Clipboard::Popover.new(type: :success) { @success }
+      ClipboardPopover(type: :success) { @success }
     end
 
     def error_popover
-      render Clipboard::Popover.new(type: :error) { @error }
+      ClipboardPopover(type: :error) { @error }
     end
 
     def default_attrs
