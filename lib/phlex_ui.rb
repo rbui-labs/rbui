@@ -19,6 +19,7 @@ loader.collapse("#{__dir__}/phlex_ui/badge")
 loader.collapse("#{__dir__}/phlex_ui/button")
 loader.collapse("#{__dir__}/phlex_ui/calendar")
 loader.collapse("#{__dir__}/phlex_ui/card")
+loader.collapse("#{__dir__}/phlex_ui/combobox")
 loader.collapse("#{__dir__}/phlex_ui/chart")
 loader.collapse("#{__dir__}/phlex_ui/checkbox")
 loader.collapse("#{__dir__}/phlex_ui/clipboard")
@@ -64,6 +65,7 @@ module PhlexUI
   autoload :Clipboard, "phlex_ui/clipboard"
   autoload :Codeblock, "phlex_ui/codeblock"
   autoload :Collapsible, "phlex_ui/collapsible"
+  autoload :Command, "phlex_ui/combobox"
   autoload :Command, "phlex_ui/command"
   autoload :ContextMenu, "phlex_ui/context_menu"
   autoload :Dialog, "phlex_ui/dialog"
