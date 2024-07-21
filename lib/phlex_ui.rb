@@ -65,7 +65,7 @@ module PhlexUI
   autoload :Clipboard, "phlex_ui/clipboard"
   autoload :Codeblock, "phlex_ui/codeblock"
   autoload :Collapsible, "phlex_ui/collapsible"
-  autoload :Command, "phlex_ui/combobox"
+  autoload :Combobox, "phlex_ui/combobox"
   autoload :Command, "phlex_ui/command"
   autoload :ContextMenu, "phlex_ui/context_menu"
   autoload :Dialog, "phlex_ui/dialog"
