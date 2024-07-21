@@ -3,9 +3,9 @@ PATH
   specs:
     phlex_ui (0.1.10)
       activesupport (>= 6.0)
-      phlex (~> 1.11)
-      rouge (~> 4.2.0)
-      zeitwerk (~> 2.6)
+      phlex (>= 1.11)
+      rouge (>= 4.2.0)
+      zeitwerk (>= 2.6)
 
 GEM
   remote: https://rubygems.org/
@@ -82,4 +82,4 @@ DEPENDENCIES
   standard
 
 BUNDLED WITH
-   2.5.10
+   2.3.25
