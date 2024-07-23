@@ -3,8 +3,9 @@ PATH
   specs:
     phlex_ui (0.1.10)
       activesupport (>= 6.0)
-      phlex (~> 1.11)
+      phlex (~> 1.10)
       rouge (~> 4.2.0)
+      tailwind_merge (= 0.12.0)
       zeitwerk (~> 2.6)
 
 GEM
@@ -23,6 +24,7 @@ GEM
     json (2.7.2)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
+    lru_redux (1.1.0)
     minitest (5.24.0)
     parallel (1.25.1)
     parser (3.3.3.0)
@@ -66,6 +68,8 @@ GEM
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.21.0)
     strscan (3.1.0)
+    tailwind_merge (0.12.0)
+      lru_redux (~> 1.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)

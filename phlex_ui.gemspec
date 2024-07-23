@@ -12,10 +12,11 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 3.2"
 
-  s.add_dependency "phlex", "~> 1.11"
+  s.add_dependency "phlex", "~> 1.10"
   s.add_dependency "rouge", "~> 4.2.0"
   s.add_dependency "zeitwerk", "~> 2.6"
   s.add_dependency "activesupport", ">= 6.0"
+  s.add_dependency "tailwind_merge", "0.12.0"
 
   s.add_development_dependency "rake"
   s.add_development_dependency "standard"
