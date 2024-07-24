@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     phlex_ui (0.1.10)
-      phlex (~> 1.10)
+      phlex (~> 1.11)
       rouge (~> 4.2.0)
       zeitwerk (~> 2.6)
 
@@ -18,7 +18,7 @@ GEM
     parser (3.3.3.0)
       ast (~> 2.4.1)
       racc
-    phlex (1.10.3)
+    phlex (1.11.0)
     racc (1.8.0)
     rainbow (3.1.1)
     rake (13.2.1)

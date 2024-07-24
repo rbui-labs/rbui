@@ -39,13 +39,13 @@ module PhlexUI
     end
 
     def with_clipboard
-      render PhlexUI::Clipboard.new(success: @clipboard_success, error: @clipboard_error, class: "relative") do
-        render PhlexUI::Clipboard::Source.new do
+      PhlexUI.Clipboard(success: @clipboard_success, error: @clipboard_error, class: "relative") do
+        PhlexUI.ClipboardSource do
           codeblock
         end
         div(class: "absolute top-2 right-2") do
-          render PhlexUI::Clipboard::Trigger.new do
-            render PhlexUI::Button.new(variant: :ghost, size: :sm, icon: true, class: "text-white hover:text-white hover:bg-white/20") { clipboard_icon }
+          PhlexUI.ClipboardTrigger do
+            PhlexUI.Button(variant: :ghost, size: :sm, icon: true, class: "text-white hover:text-white hover:bg-white/20") { clipboard_icon }
           end
         end
       end

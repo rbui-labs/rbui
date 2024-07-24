@@ -5,9 +5,11 @@ require "test_helper"
 class PhlexUI::InputErrorTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
-  def test_render_with_default_attributes
-    output = render PhlexUI::InputError.new
+  def test_render_with_all_items
+    output = phlex_context do
+      PhlexUI.InputError { "you should use phlex" }
+    end
 
-    refute_empty(output)
+    assert_match(/you should use phlex/, output)
   end
 end

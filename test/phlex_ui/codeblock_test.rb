@@ -5,9 +5,17 @@ require "test_helper"
 class PhlexUI::CodeblockTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
-  def test_render_with_default_attributes
-    output = render PhlexUI::Codeblock.new("p", syntax: :ruby)
+  def test_render_with_all_items
+    code = <<~CODE
+      def hello_world
+        puts "Hello, world!"
+      end
+    CODE
 
-    refute_empty(output)
+    output = phlex_context do
+      PhlexUI.Codeblock(code, syntax: :ruby)
+    end
+
+    assert_match(/Hello/, output)
   end
 end
