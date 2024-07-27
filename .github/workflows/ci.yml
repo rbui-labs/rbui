@@ -25,16 +25,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        working-directory: ./javascript
         with:
           node-version: "20"
           cache: "yarn"
       - name: Install packages
-        working-directory: ./javascript
         run: yarn install --immutable
-      - name: Run ESLint
         working-directory: ./javascript
+      - name: Run ESLint
         run: yarn eslint .
+        working-directory: ./javascript
   tests:
     strategy:
       fail-fast: false
