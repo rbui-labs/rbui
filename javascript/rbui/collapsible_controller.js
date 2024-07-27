@@ -21,6 +21,7 @@ export default class extends Controller {
   }
 
   // Handle changes in the 'open' value
+  // eslint-disable-next-line no-unused-vars
   openValueChanged(isOpen, wasOpen) {
     if (isOpen) {
       this.open()
