@@ -13,21 +13,37 @@ jobs:
     name: StandardRB Check Action
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout@v4
-     - uses: ruby/setup-ruby@v1
-       with:
-         ruby-version: 3.3
-         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-     - run: bundle exec standardrb --format progress
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - run: bundle exec standardrb --format progress
+  eslint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        working-directory: ./javascript
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - name: Install packages
+        working-directory: ./javascript
+        run: yarn install --immutable
+      - name: Run ESLint
+        working-directory: ./javascript
+        run: yarn eslint .
   tests:
     strategy:
-        fail-fast: false
-        matrix:
-          os: ["ubuntu-latest"]
-          ruby-version:
-            - "3.2"
-            - "3.3"
-            - "head"
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest"]
+        ruby-version:
+          - "3.2"
+          - "3.3"
+          - "head"
     name: Running minitest
     runs-on: ubuntu-latest
     steps:
@@ -36,6 +52,5 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: false
-
       - run: bundle install
       - run: bundle exec rake test

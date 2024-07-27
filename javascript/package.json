@@ -1,0 +1,43 @@
+{
+  "name": "phlex_ui",
+  "version": "0.1.5",
+  "description": "Stimulus controllers for PhlexUI Component Library",
+  "main": "index.js",
+  "homepage": "https://phlexui.com",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PhlexUI",
+    "Stimulus",
+    "StimulusJS",
+    "StimulusControllers",
+    "Ruby",
+    "Rails",
+    "RubyOnRails"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhlexUI/phlex_ui_stimulus.git"
+  },
+  "author": "George Kettle",
+  "license": "ISC",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "chart.js": "^4.4.1",
+    "date-fns": "^2.30.0",
+    "fuse.js": "^7.0.0",
+    "motion": "^10.16.4",
+    "mustache": "^4.2.0",
+    "tippy.js": "^6.3.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "eslint": "9.x",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "globals": "^15.8.0"
+  }
+}
