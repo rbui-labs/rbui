@@ -1,6 +1,3 @@
-require "active_support/core_ext/object/blank"
-require "active_support/core_ext/string/inflections"
-require "active_support/core_ext/string/output_safety"
 require "json"
 require "phlex"
 require "zeitwerk"
