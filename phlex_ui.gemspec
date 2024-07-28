@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.add_dependency "phlex", "~> 1.11"
   s.add_dependency "rouge", "~> 4.2.0"
   s.add_dependency "zeitwerk", "~> 2.6"
-  s.add_dependency "activesupport", ">= 6.0"
 
   s.add_development_dependency "rake"
   s.add_development_dependency "standard"
