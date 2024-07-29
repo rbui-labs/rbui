@@ -1,16 +1,19 @@
 module PhlexUI
   class AttributeMerger
     attr_reader :default_attrs, :user_attrs
-    OVERRIDE_KEY = "!".freeze
 
     def initialize(default_attrs, user_attrs)
       @default_attrs = flatten_hash(default_attrs)
       @user_attrs = flatten_hash(user_attrs)
     end
 
+    # @return [String]
+    # any key that ends with ! will override the default value
+    # ex: if default_attrs = { class: "text-right" }, user_attrs = { class!: "text-left" }
+    # the result will be { class: "text-left }
     def call
-      merged_attrs = merge_hashes(default_attrs, non_override_attrs)
-      mix(merged_attrs, override_attrs)
+      merged_attrs = merge_hashes(default_attrs, user_attrs)
+      mix(merged_attrs, user_attrs)
     end
 
     private
@@ -34,18 +37,6 @@ module PhlexUI
         result.transform_keys! do |key|
           key.end_with?("!") ? key.name.chop.to_sym : key
         end
-      end
-    end
-
-    def override_attrs
-      user_attrs.select do |key, value|
-        key.to_s.include?(OVERRIDE_KEY)
-      end
-    end
-
-    def non_override_attrs
-      user_attrs.reject do |key, value|
-        key.to_s.include?(OVERRIDE_KEY)
       end
     end
 
