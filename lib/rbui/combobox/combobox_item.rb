@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ComboboxItem < Base
     def initialize(value: nil, **attrs)
       @value = value
@@ -9,7 +9,7 @@ module PhlexUI
 
     def view_template(&block)
       div(**attrs) do
-        div(class: "invisible", data: {phlexui__combobox_item_target: "check"}) { icon }
+        div(class: "invisible", data: {rbui__combobox_item_target: "check"}) { icon }
         block.call
       end
     end
@@ -40,9 +40,9 @@ module PhlexUI
         data: {
           value: @value,
           selected: false,
-          phlexui__combobox_content_target: "item",
-          controller: "phlexui--combobox-item",
-          action: "click->phlexui--combobox-item#selectItem mouseenter->phlexui--combobox-item#mouseenter"
+          rbui__combobox_content_target: "item",
+          controller: "rbui--combobox-item",
+          action: "click->rbui--combobox-item#selectItem mouseenter->rbui--combobox-item#mouseenter"
         },
         tabindex: "0",
         role: "option"

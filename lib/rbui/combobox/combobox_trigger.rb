@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ComboboxTrigger < Base
     def initialize(placeholder:, **attrs)
       @placeholder = placeholder
@@ -9,7 +9,7 @@ module PhlexUI
 
     def view_template
       button(**attrs) do
-        span(data: {phlexui__combobox_target: "content"}) { @placeholder }
+        span(data: {rbui__combobox_target: "content"}) { @placeholder }
         icon
       end
     end
@@ -39,8 +39,8 @@ module PhlexUI
     def default_attrs
       {class: "inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-[200px] justify-between",
        data: {
-         action: "phlexui--combobox#onClick",
-         phlexui__combobox_target: "input"
+         action: "rbui--combobox#onClick",
+         rbui__combobox_target: "input"
        },
        role: "combobox", variant: "outline",
        aria: {

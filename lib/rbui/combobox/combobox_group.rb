@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ComboboxGroup < Base
     def initialize(heading: nil, **attrs)
       @heading = heading
@@ -31,7 +31,7 @@ module PhlexUI
         role: "presentation",
         data: {
           value: @heading,
-          phlexui__combobox_content_target: "group"
+          rbui__combobox_content_target: "group"
         }
       }
     end

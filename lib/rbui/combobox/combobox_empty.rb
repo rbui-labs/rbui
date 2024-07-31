@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ComboboxEmpty < Base
     def view_template(&)
       div(**attrs, &)
@@ -9,7 +9,7 @@ module PhlexUI
     private
 
     def default_attrs
-      {class: "hidden py-6 text-center text-sm", role: "presentation", data: {phlexui__combobox_content_target: "empty"}}
+      {class: "hidden py-6 text-center text-sm", role: "presentation", data: {rbui__combobox_content_target: "empty"}}
     end
   end
 end

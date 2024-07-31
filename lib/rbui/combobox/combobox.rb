@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Combobox < Base
     def view_template(&)
       div(**attrs, &)
@@ -9,7 +9,7 @@ module PhlexUI
     private
 
     def default_attrs
-      {data: {controller: "phlexui--combobox", action: "click@window->phlexui--combobox#clickOutside", phlexui__combobox_closed_value: "true"}}
+      {data: {controller: "rbui--combobox", action: "click@window->rbui--combobox#clickOutside", rbui__combobox_closed_value: "true"}}
     end
   end
 end
