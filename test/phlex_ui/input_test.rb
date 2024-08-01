@@ -10,7 +10,7 @@ class PhlexUI::InputTest < Minitest::Test
       PhlexUI.Input(type: "email", placeholder: "Email")
     end
 
-    assert_match(/Email/, output)
+    assert_match(/placeholder="Email"/, output)
   end
 
   def test_no_destructive_classes_when_error_absent
