@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     phlex_ui (0.1.10)
-      phlex (~> 1.10)
+      phlex (>= 1.0, < 2.0)
       rouge (~> 4.2.0)
       tailwind_merge (>= 0.12)
       zeitwerk (~> 2.6)
