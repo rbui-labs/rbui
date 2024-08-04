@@ -2,9 +2,14 @@ require "json"
 require "phlex"
 require "zeitwerk"
 
-loader = Zeitwerk::Loader.for_gem
+# WARNING: Zeitwerk defines the constant RBUI after the directory
+# loader = Zeitwerk::Loader.for_gem
+# temporarily disable the constant to avoid errors with dual module definition
+loader = Zeitwerk::Loader.for_gem(warn_on_extra_files: false)
+
 loader.inflector.inflect(
-  "phlex_ui" => "PhlexUI"
+  "phlex_ui" => "PhlexUI",
+  "rbui" => "RBUI"
 )
 
 loader.collapse("#{__dir__}/phlex_ui/accordion")
@@ -41,6 +46,9 @@ loader.collapse("#{__dir__}/phlex_ui/tabs")
 loader.collapse("#{__dir__}/phlex_ui/theme_toggle")
 loader.collapse("#{__dir__}/phlex_ui/tooltip")
 loader.collapse("#{__dir__}/phlex_ui/typography")
+
+# RBUI
+loader.collapse("#{__dir__}/rbui/combobox")
 
 loader.setup # ready!
 

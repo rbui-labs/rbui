@@ -2,6 +2,7 @@
 
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 require "phlex_ui"
+require "rbui"
 
 require "phlex/testing/view_helper"
 require "minitest/autorun"
