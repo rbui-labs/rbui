@@ -1,0 +1,37 @@
+{
+  "name": "rbui-js",
+  "version": "0.0.1-alpha.0",
+  "description": "Stimulus controllers for PhlexUI Component Library",
+  "main": "index.js",
+  "homepage": "https://phlexui.com",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PhlexUI",
+    "Stimulus",
+    "StimulusJS",
+    "StimulusControllers",
+    "Ruby",
+    "Rails",
+    "RubyOnRails"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhlexUI/phlex_ui.git"
+  },
+  "author": "George Kettle",
+  "license": "ISC",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "chart.js": "^4.4.1",
+    "date-fns": "^2.30.0",
+    "fuse.js": "^7.0.0",
+    "motion": "^10.16.4",
+    "mustache": "^4.2.0",
+    "tippy.js": "^6.3.7"
+  },
+  "devDependencies": {
+    "globals": "^15.8.0"
+  }
+}
