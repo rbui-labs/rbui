@@ -43,12 +43,12 @@ loader.collapse("#{__dir__}/phlex_ui/sheet")
 loader.collapse("#{__dir__}/phlex_ui/shortcut_key")
 loader.collapse("#{__dir__}/phlex_ui/table")
 loader.collapse("#{__dir__}/phlex_ui/tabs")
-loader.collapse("#{__dir__}/phlex_ui/theme_toggle")
 loader.collapse("#{__dir__}/phlex_ui/tooltip")
 loader.collapse("#{__dir__}/phlex_ui/typography")
 
 # RBUI
 loader.collapse("#{__dir__}/rbui/combobox")
+loader.collapse("#{__dir__}/rbui/theme_toggle")
 
 loader.setup # ready!
 
@@ -87,7 +87,6 @@ module PhlexUI
   autoload :ShortcutKey, "phlex_ui/shortcut_key"
   autoload :Table, "phlex_ui/table"
   autoload :Tabs, "phlex_ui/tabs"
-  autoload :ThemeToggle, "phlex_ui/theme_toggle"
   autoload :Tooltip, "phlex_ui/tooltip"
   autoload :Typography, "phlex_ui/typography"
 end
