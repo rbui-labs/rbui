@@ -2,12 +2,12 @@
 
 require "test_helper"
 
-class PhlexUI::ThemeToggleTest < Minitest::Test
+class RBUI::ThemeToggleTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.ThemeToggle do |toggle|
+      RBUI.ThemeToggle do |toggle|
         toggle.light_mode do
           PhlexUI.Button(variant: :primary) { "Light" }
         end
