@@ -20,21 +20,21 @@ module RBUI
 
     def default_attrs
       {
-        data: { controller: "rbui--theme-toggle" }
+        data: {controller: "rbui--theme-toggle"}
       }
     end
 
     def default_light_attrs
       {
         class: "dark:hidden",
-        data: { action: "click->rbui--theme-toggle#setDarkTheme" }
+        data: {action: "click->rbui--theme-toggle#setDarkTheme"}
       }
     end
 
     def default_dark_attrs
       {
         class: "hidden dark:inline-block",
-        data: { action: "click->rbui--theme-toggle#setLightTheme" }
+        data: {action: "click->rbui--theme-toggle#setLightTheme"}
       }
     end
   end
