@@ -12,18 +12,21 @@ import ComboboxController from "./lib/rbui/combobox/combobox_controller";
 import ComboboxContentController from "./lib/rbui/combobox/combobox_content_controller";
 import ComboboxItemController from "./lib/rbui/combobox/combobox_item_controller";
 import ThemeToggleController from "./lib/rbui/theme_toggle/theme_toggle_controller";
+import TooltipController from "./lib/rbui/tooltip/tooltip_controller";
 
 // Register all controllers
 application.register("rbui--combobox", ComboboxController);
 application.register("rbui--combobox-content", ComboboxContentController);
 application.register("rbui--combobox-item", ComboboxItemController);
 application.register("rbui--theme-toggle", ThemeToggleController);
+application.register("rbui--tooltip", TooltipController);
 
 // Export all controllers so user of npm package can lazy load controllers
 export { default as ComboboxController } from "./lib/rbui/combobox/combobox_controller";
 export { default as ComboboxContentController } from "./lib/rbui/combobox/combobox_content_controller";
 export { default as ComboboxItemController } from "./lib/rbui/combobox/combobox_item_controller";
 export { default as ThemeToggleController } from "./lib/rbui/theme_toggle/theme_toggle_controller";
+export { default as TooltipController } from "./lib/rbui/tooltip/tooltip_controller";
 
 // Export application
 export { application };

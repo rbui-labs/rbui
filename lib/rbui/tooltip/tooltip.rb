@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Tooltip < Base
-    def initialize(options: {}, **attrs)
-      @options = options
+    def initialize(placement: "top", **attrs)
+      @placement = placement
       super(**attrs)
     end
 
@@ -16,9 +16,10 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "popover",
-          popover_options_value: @options.to_json
-        }
+          controller: "rbui--tooltip",
+          rbui__tooltip_placement_value: @placement
+        },
+        class: "group"
       }
     end
   end
