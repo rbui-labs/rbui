@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class TooltipTrigger < Base
     def view_template(&)
       div(**attrs, &)
@@ -10,8 +10,9 @@ module PhlexUI
 
     def default_attrs
       {
-        data: {popover_target: "trigger"},
-        class: "inline-block"
+        data: {rbui__tooltip_target: "trigger"},
+        variant: :outline,
+        class: "peer"
       }
     end
   end
