@@ -3,7 +3,7 @@
 module RBUI
   class TooltipTrigger < Base
     def view_template(&)
-      PhlexUI.Button(**attrs, &)
+      div(**attrs, &)
     end
 
     private
