@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class SelectLabel < Base
     def view_template(&)
       h3(**attrs, &)

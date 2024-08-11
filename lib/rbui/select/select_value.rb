@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class SelectValue < Base
     def initialize(placeholder: nil, **attrs)
       @placeholder = placeholder
@@ -18,7 +18,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "text"
+          rbui__select_target: "value"
         },
         class: "pointer-events-none"
       }

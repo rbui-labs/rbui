@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class SelectInput < Base
     def view_template
-      PhlexUI.Input(**attrs)
+      input(**attrs)
     end
 
     private
@@ -12,7 +12,7 @@ module PhlexUI
       {
         class: "hidden",
         data: {
-          controller: "input"
+          rbui__select_target: "input"
         }
       }
     end

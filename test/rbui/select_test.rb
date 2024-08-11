@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::SelectTest < Minitest::Test
+class RBUI::SelectTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
@@ -13,15 +13,15 @@ class PhlexUI::SelectTest < Minitest::Test
     ]
 
     output = phlex_context do
-      PhlexUI.Select do
-        PhlexUI.SelectInput
-        PhlexUI.SelectTrigger do
-          PhlexUI.SelectValue(placeholder: "Placeholder")
+      RBUI.Select do
+        RBUI.SelectInput
+        RBUI.SelectTrigger do
+          RBUI.SelectValue(placeholder: "Placeholder")
         end
-        PhlexUI.SelectContent(outlet_id: "1") do
-          PhlexUI.SelectGroup do
+        RBUI.SelectContent(outlet_id: "1") do
+          RBUI.SelectGroup do
             people.each do |person|
-              PhlexUI.SelectItem(value: person[1]) { person[0] }
+              RBUI.SelectItem(value: person[1]) { person[0] }
             end
           end
         end
