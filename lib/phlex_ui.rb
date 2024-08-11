@@ -38,7 +38,6 @@ loader.collapse("#{__dir__}/phlex_ui/input")
 loader.collapse("#{__dir__}/phlex_ui/link")
 loader.collapse("#{__dir__}/phlex_ui/pagination")
 loader.collapse("#{__dir__}/phlex_ui/popover")
-loader.collapse("#{__dir__}/phlex_ui/select")
 loader.collapse("#{__dir__}/phlex_ui/sheet")
 loader.collapse("#{__dir__}/phlex_ui/shortcut_key")
 loader.collapse("#{__dir__}/phlex_ui/table")
@@ -49,6 +48,7 @@ loader.collapse("#{__dir__}/phlex_ui/typography")
 loader.collapse("#{__dir__}/rbui/combobox")
 loader.collapse("#{__dir__}/rbui/theme_toggle")
 loader.collapse("#{__dir__}/rbui/tooltip")
+loader.collapse("#{__dir__}/rbui/select")
 
 loader.setup # ready!
 
@@ -82,7 +82,6 @@ module PhlexUI
   autoload :Link, "phlex_ui/link"
   autoload :Pagination, "phlex_ui/pagination"
   autoload :Popover, "phlex_ui/popover"
-  autoload :Select, "phlex_ui/select"
   autoload :Sheet, "phlex_ui/sheet"
   autoload :ShortcutKey, "phlex_ui/shortcut_key"
   autoload :Table, "phlex_ui/table"
