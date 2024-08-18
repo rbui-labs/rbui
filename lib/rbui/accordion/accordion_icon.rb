@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class AccordionIcon < Base
     def view_template(&block)
       span(**attrs) do
@@ -31,7 +31,7 @@ module PhlexUI
     def default_attrs
       {
         class: "opacity-50",
-        data: {accordion_target: "icon"}
+        data: {rbui__accordion_target: "icon"}
       }
     end
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class AccordionItem < Base
     def initialize(open: false, rotate_icon: 180, **attrs)
       @open = open
@@ -17,9 +17,9 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "accordion",
-          accordion_open_value: @open,
-          accordion_rotate_icon_value: @rotate_icon
+          controller: "rbui--accordion",
+          rbui__accordion_open_value: @open,
+          rbui__accordion_rotate_icon_value: @rotate_icon
         },
         class: "border-b"
       }

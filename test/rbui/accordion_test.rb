@@ -2,29 +2,29 @@
 
 require "test_helper"
 
-class PhlexUI::AccordionTest < Minitest::Test
+class RBUI::AccordionTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_default_items
     output = phlex_context do
-      PhlexUI.Accordion do
-        PhlexUI.AccordionItem do
-          PhlexUI.AccordionDefaultTrigger { "Title" }
-          PhlexUI.AccordionDefaultContent { "Content" }
+      RBUI.Accordion do
+        RBUI.AccordionItem do
+          RBUI.AccordionDefaultTrigger { "Title" }
+          RBUI.AccordionDefaultContent { "Content" }
         end
       end
     end
 
-    assert_match(/<div data-controller="accordion"/, output)
+    assert_match(/<div data-controller="rbui--accordion"/, output)
   end
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.Accordion do
-        PhlexUI.AccordionItem do
-          PhlexUI.AccordionTrigger do |trigger|
+      RBUI.Accordion do
+        RBUI.AccordionItem do
+          RBUI.AccordionTrigger do |trigger|
             trigger.div do |div|
-              PhlexUI.AccordionIcon do |icon|
+              RBUI.AccordionIcon do |icon|
                 icon.svg(
                   xmlns: "http://www.w3.org/2000/svg",
                   fill: "none",
@@ -40,19 +40,19 @@ class PhlexUI::AccordionTest < Minitest::Test
                   )
                 end
               end
-              div.p { "What is PhlexUI?" }
+              div.p { "What is RBUI?" }
             end
           end
 
-          PhlexUI.AccordionContent do |content|
-            content.p { "PhlexUI is a UI component library for Ruby devs who want to build better, faster." }
+          RBUI.AccordionContent do |content|
+            content.p { "RBUI is a UI component library for Ruby devs who want to build better, faster." }
           end
         end
 
-        PhlexUI.AccordionItem do
-          PhlexUI.AccordionTrigger do |trigger|
+        RBUI.AccordionItem do
+          RBUI.AccordionTrigger do |trigger|
             trigger.div do |div|
-              PhlexUI.AccordionIcon do |icon|
+              RBUI.AccordionIcon do |icon|
                 icon.svg(
                   xmlns: "http://www.w3.org/2000/svg",
                   fill: "none",
@@ -72,15 +72,15 @@ class PhlexUI::AccordionTest < Minitest::Test
             end
           end
 
-          PhlexUI.AccordionContent do |content|
+          RBUI.AccordionContent do |content|
             content.p do
-              "Yes, PhlexUI is pure Ruby and works great with Rails. It's a Ruby gem that you can install into your Rails app."
+              "Yes, RBUI is pure Ruby and works great with Rails. It's a Ruby gem that you can install into your Rails app."
             end
           end
         end
       end
     end
 
-    assert_match(/Yes, PhlexUI is pure Ruby and works great with Rails/, output)
+    assert_match(/Yes, RBUI is pure Ruby and works great with Rails/, output)
   end
 end

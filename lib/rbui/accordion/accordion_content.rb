@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class AccordionContent < Base
     def view_template(&)
       div(**attrs, &)
@@ -11,7 +11,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          accordion_target: "content"
+          rbui__accordion_target: "content"
         },
         class: "overflow-y-hidden",
         style: "height: 0px;"

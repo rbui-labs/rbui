@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class AccordionDefaultContent < Base
+module RBUI
+  class Accordion < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        class: "pb-4 pt-0 text-sm"
+        class: "w-full"
       }
     end
   end
