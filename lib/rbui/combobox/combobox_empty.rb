@@ -9,7 +9,13 @@ module RBUI
     private
 
     def default_attrs
-      {class: "hidden py-6 text-center text-sm", role: "presentation", data: {rbui__combobox_content_target: "empty"}}
+      {
+        role: "presentation",
+        class: "hidden py-6 text-center text-sm",
+        data: {
+          rbui__combobox_content_target: "empty"
+        }
+      }
     end
   end
 end

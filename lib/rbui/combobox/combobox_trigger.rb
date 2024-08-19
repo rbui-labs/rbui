@@ -2,14 +2,9 @@
 
 module RBUI
   class ComboboxTrigger < Base
-    def initialize(placeholder:, **attrs)
-      @placeholder = placeholder
-      super(**attrs)
-    end
-
-    def view_template
+    def view_template(&block)
       button(**attrs) do
-        span(data: {rbui__combobox_target: "content"}) { @placeholder }
+        block&.call
         icon
       end
     end
@@ -37,17 +32,21 @@ module RBUI
     end
 
     def default_attrs
-      {class: "inline-flex items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-[200px] justify-between",
-       data: {
-         action: "rbui--combobox#onClick",
-         rbui__combobox_target: "input"
-       },
-       role: "combobox", variant: "outline",
-       aria: {
-         expanded: "false",
-         haspopup: "listbox",
-         autocomplete: "none"
-       }}
+      {
+        data: {
+          action: "rbui--combobox#onTriggerClick",
+          rbui__combobox_target: "trigger"
+        },
+        type: "button",
+        role: "combobox",
+        aria: {
+          expanded: "false",
+          haspopup: "listbox",
+          autocomplete: "none",
+          activedescendant: true
+        },
+        class: "flex h-full w-full items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-[200px] justify-between"
+      }
     end
   end
 end
