@@ -49,6 +49,7 @@ loader.collapse("#{__dir__}/rbui/combobox")
 loader.collapse("#{__dir__}/rbui/theme_toggle")
 loader.collapse("#{__dir__}/rbui/tooltip")
 loader.collapse("#{__dir__}/rbui/select")
+loader.collapse("#{__dir__}/rbui/accordion")
 
 loader.setup # ready!
 
