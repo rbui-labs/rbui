@@ -14,7 +14,7 @@ class RBUI::SelectTest < Minitest::Test
 
     output = phlex_context do
       RBUI.Select do
-        RBUI.SelectInput
+        RBUI.SelectInput(name: "NAME")
         RBUI.SelectTrigger do
           RBUI.SelectValue(placeholder: "Placeholder")
         end
@@ -29,5 +29,6 @@ class RBUI::SelectTest < Minitest::Test
     end
 
     assert_match(/John/, output)
+    assert_match('name="NAME"', output)
   end
 end
