@@ -1,6 +1,8 @@
+require_relative "lib/phlex_ui/version"
+
 Gem::Specification.new do |s|
   s.name = "phlex_ui"
-  s.version = "0.1.10"
+  s.version = PhlexUI::VERSION
   s.summary = "PhlexUI is a UI Component Library for Ruby developers."
   s.description = "PhlexUI is a UI Component Library for Ruby developers. Built on top of the Phlex Framework."
   s.authors = ["George Kettle"]
@@ -14,7 +16,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "phlex", "~> 1.10"
   s.add_dependency "rouge", "~> 4.2.0"
-  s.add_dependency "zeitwerk", "~> 2.6"
   s.add_dependency "tailwind_merge", ">= 0.12"
 
   s.add_development_dependency "rake"

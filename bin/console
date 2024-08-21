@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "phlex_ui"
+
+Bundler.require(:development)
+
+require "irb"
+
+IRB.start(__FILE__)
