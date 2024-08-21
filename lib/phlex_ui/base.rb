@@ -7,7 +7,7 @@ module PhlexUI
     attr_reader :attrs
 
     def initialize(**user_attrs)
-      @attrs = PhlexUI::AttributeMerger.new(default_attrs, user_attrs).call
+      @attrs = mix(default_attrs, user_attrs)
       @attrs[:class] = ::TailwindMerge::Merger.new.merge(@attrs[:class]) if @attrs[:class]
     end
 
