@@ -29,7 +29,8 @@ module PhlexUI
           when Array
             old.is_a?(Array) ? (old + new) : new
           when String
-            old.is_a?(String) ? "#{old} #{new}" : new
+            value = "#{old} #{new}".split.uniq.join(" ")
+            old.is_a?(String) ? value : new
           else
             new
           end

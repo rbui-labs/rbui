@@ -14,7 +14,7 @@ class PhlexUI::SelectTest < Minitest::Test
 
     output = phlex_context do
       PhlexUI.Select do
-        PhlexUI.SelectInput
+        PhlexUI.SelectInput(name: "NAME")
         PhlexUI.SelectTrigger do
           PhlexUI.SelectValue(placeholder: "Placeholder")
         end
@@ -29,5 +29,6 @@ class PhlexUI::SelectTest < Minitest::Test
     end
 
     assert_match(/John/, output)
+    assert_match('name="NAME"', output)
   end
 end
