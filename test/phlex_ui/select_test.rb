@@ -14,7 +14,7 @@ class PhlexUI::SelectTest < Minitest::Test
 
     output = phlex_context do
       PhlexUI.Select do
-        RBUI.SelectInput(name: "NAME")
+        PhlexUI.SelectInput(name: "NAME")
         PhlexUI.SelectTrigger do
           PhlexUI.SelectValue(placeholder: "Placeholder")
         end
