@@ -7,12 +7,12 @@ module RBUI
     end
 
     def light_mode(**user_attrs, &)
-      light_attrs = AttributeMerger.new(default_light_attrs, user_attrs).call
+      light_attrs = mix(default_light_attrs, user_attrs)
       div(**light_attrs, &)
     end
 
     def dark_mode(**user_attrs, &)
-      dark_attrs = AttributeMerger.new(default_dark_attrs, user_attrs).call
+      dark_attrs = mix(default_dark_attrs, user_attrs)
       div(**dark_attrs, &)
     end
 
