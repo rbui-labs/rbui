@@ -28,7 +28,7 @@ module RBUI
           when Array
             old.is_a?(Array) ? (old + new) : new
           when String
-            value = "#{old} #{new}".squish.split.uniq.join(" ")
+            value = "#{old} #{new}".split.uniq.join(" ")
             old.is_a?(String) ? value : new
           else
             new
