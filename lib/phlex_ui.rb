@@ -12,7 +12,6 @@ loader.inflector.inflect(
   "rbui" => "RBUI"
 )
 
-loader.collapse("#{__dir__}/phlex_ui/accordion")
 loader.collapse("#{__dir__}/phlex_ui/alert_dialog")
 loader.collapse("#{__dir__}/phlex_ui/alert")
 loader.collapse("#{__dir__}/phlex_ui/aspect_ratio")
@@ -56,7 +55,6 @@ loader.setup # ready!
 module PhlexUI
   extend Phlex::Kit
 
-  autoload :Accordion, "phlex_ui/accordion"
   autoload :AlertDialog, "phlex_ui/alert_dialog"
   autoload :Alert, "phlex_ui/alert"
   autoload :AspectRatio, "phlex_ui/aspect_ratio"
