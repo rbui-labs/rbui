@@ -5,7 +5,6 @@ PATH
       phlex (~> 1.10)
       rouge (~> 4.2.0)
       tailwind_merge (>= 0.12)
-      zeitwerk (~> 2.6)
 
 GEM
   remote: https://rubygems.org/
@@ -15,7 +14,7 @@ GEM
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
     lru_redux (1.1.0)
-    minitest (5.24.0)
+    minitest (5.25.1)
     parallel (1.25.1)
     parser (3.3.3.0)
       ast (~> 2.4.1)
@@ -61,7 +60,6 @@ GEM
     tailwind_merge (0.12.0)
       lru_redux (~> 1.1)
     unicode-display_width (2.5.0)
-    zeitwerk (2.6.17)
 
 PLATFORMS
   arm64-darwin-23
