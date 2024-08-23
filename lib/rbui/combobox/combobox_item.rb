@@ -9,7 +9,7 @@ module RBUI
 
     def view_template(&block)
       div(**attrs) do
-        div(class: "invisible", data: {rbui__combobox_item_target: "check"}) { icon }
+        div(class: "invisible group-aria-selected:visible") { icon }
         block.call
       end
     end
@@ -35,17 +35,18 @@ module RBUI
 
     def default_attrs
       {
+        role: "option",
+        tabindex: "0",
         class:
-          "relative flex cursor-pointer select-none items-center gap-x-2 rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground aria-selected:bg-accent aria-selected:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+          "combobox-item group relative flex cursor-pointer select-none items-center gap-x-2 rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground aria-[current]:bg-accent aria-[current]:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         data: {
           value: @value,
-          selected: false,
+          rbui__combobox_target: "item",
           rbui__combobox_content_target: "item",
           controller: "rbui--combobox-item",
-          action: "click->rbui--combobox-item#selectItem mouseenter->rbui--combobox-item#mouseenter"
+          action: "click->rbui--combobox#onItemSelected"
         },
-        tabindex: "0",
-        role: "option"
+        aria_selected: "false"
       }
     end
   end

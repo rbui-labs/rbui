@@ -2,12 +2,14 @@
 
 module RBUI
   class ComboboxContent < Base
+    def initialize(**attrs)
+      @id = "content#{SecureRandom.hex(4)}"
+      super
+    end
+
     def view_template(&)
       div(**attrs) do
-        div(
-          data: {controller: "rbui--combobox-content", action: "keydown.up->rbui--combobox-content#handleKeyUp keydown.down->rbui--combobox-content#handleKeyDown keydown.enter->rbui--combobox-content#handleKeyEnter keydown.esc->rbui--combobox-content#handleKeyEsc"},
-          class: "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground rounded-lg border shadow-md", &
-        )
+        div(class: "min-w-max max-h-[300px] overflow-y-auto overflow-x-hidden rounded-md border bg-popover text-popover-foreground shadow-md outline-none animate-out group-data-[rbui--combobox-open-value=true]/combobox:animate-in fade-out-0 group-data-[rbui--combobox-open-value=true]/combobox:fade-in-0 zoom-out-95 group-data-[rbui--combobox-open-value=true]/combobox:zoom-in-95 slide-in-from-top-2", &)
       end
     end
 
@@ -15,8 +17,14 @@ module RBUI
 
     def default_attrs
       {
-        data: {rbui__combobox_target: "popover"},
-        class: "invisible absolute top-0 left-0 p-1.5 rounded"
+        id: @id,
+        role: "listbox",
+        data: {
+          controller: "rbui--combobox-content",
+          rbui__combobox_target: "content",
+          action: "keydown.enter->rbui--combobox#onKeyEnter keydown.esc->rbui--combobox#onEscKey keydown.down->rbui--combobox#onKeyDown keydown.up->rbui--combobox#onKeyUp"
+        },
+        class: "combobox-content hidden w-full absolute top-0 left-0 z-50"
       }
     end
   end

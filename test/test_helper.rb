@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "phlex_ui"
-require "rbui"
+require "bundler/setup"
 
+Bundler.require(:default)
+
+require "phlex"
 require "phlex/testing/view_helper"
 require "minitest/autorun"
 

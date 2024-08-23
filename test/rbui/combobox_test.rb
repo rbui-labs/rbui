@@ -8,8 +8,11 @@ class RBUI::ComboboxTest < Minitest::Test
   def test_render_with_all_items
     output = phlex_context do
       RBUI.Combobox do
-        RBUI.ComboboxTrigger(placeholder: "Select event...", aria_controls: "list")
-        RBUI.ComboboxContent(id: "list") do
+        RBUI.ComboboxInput()
+        RBUI.ComboboxTrigger do
+          RBUI.ComboboxValue(placeholder: "Select event...")
+        end
+        RBUI.ComboboxContent do
           RBUI.ComboboxSearchInput(placeholder: "Search event...")
           RBUI.ComboboxList do
             RBUI.ComboboxEmpty { "No results found." }

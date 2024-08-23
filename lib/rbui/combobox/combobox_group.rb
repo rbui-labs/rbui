@@ -26,8 +26,7 @@ module RBUI
 
     def default_attrs
       {
-        class:
-          "overflow-hidden p-1 text-foreground ",
+        class: "overflow-hidden p-1 text-foreground",
         role: "presentation",
         data: {
           value: @heading,

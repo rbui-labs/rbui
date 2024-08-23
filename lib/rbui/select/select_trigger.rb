@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class ComboboxTrigger < Base
+  class SelectTrigger < Base
     def view_template(&block)
       button(**attrs) do
         block&.call
@@ -34,18 +34,20 @@ module RBUI
     def default_attrs
       {
         data: {
-          action: "rbui--combobox#onTriggerClick",
-          rbui__combobox_target: "trigger"
+          action: "rbui--select#onClick",
+          rbui__select_target: "trigger"
         },
         type: "button",
         role: "combobox",
         aria: {
+          controls: "radix-:r0:",
           expanded: "false",
-          haspopup: "listbox",
           autocomplete: "none",
+          haspopup: "listbox",
           activedescendant: true
         },
-        class: "flex h-full w-full items-center whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-[200px] justify-between"
+        class:
+          "truncate w-full flex h-9 items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
       }
     end
   end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class ComboboxEmpty < Base
+  class AccordionContent < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,11 +10,11 @@ module RBUI
 
     def default_attrs
       {
-        role: "presentation",
-        class: "hidden py-6 text-center text-sm",
         data: {
-          rbui__combobox_content_target: "empty"
-        }
+          rbui__accordion_target: "content"
+        },
+        class: "overflow-y-hidden",
+        style: "height: 0px;"
       }
     end
   end
