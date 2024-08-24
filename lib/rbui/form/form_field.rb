@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class FormItem < Base
+module RBUI
+  class FormField < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,6 +10,9 @@ module PhlexUI
 
     def default_attrs
       {
+        data: {
+          controller: "rbui--form-field"
+        },
         class: "space-y-2"
       }
     end

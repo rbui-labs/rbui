@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Checkbox < Base
     def view_template
       input(**attrs)
@@ -11,6 +11,10 @@ module PhlexUI
     def default_attrs
       {
         type: "checkbox",
+        data: {
+          rbui__form_field_target: "input",
+          action: "input->rbui--form-field#onInput invalid->rbui--form-field#onInvalid"
+        },
         class: "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 accent-primary"
       }
     end
