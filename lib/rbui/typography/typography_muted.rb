@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class TypographyP < Base
+module RBUI
+  class TypographyMuted < Base
     def view_template(&)
       p(**attrs, &)
     end
@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        class: "leading-7 [&:not(:first-child)]:mt-6"
+        class: "text-sm text-muted-foreground"
       }
     end
   end

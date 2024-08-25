@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class TypographyList < Base
     def initialize(items: [], numbered: false, **attrs)
       @items = items
@@ -14,7 +14,7 @@ module PhlexUI
       else
         list(**attrs) do
           @items.each do |item|
-            PhlexUI.TypographyListItem { item }
+            TypographyListItem { item }
           end
         end
       end

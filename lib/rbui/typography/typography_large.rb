@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class TypographyMuted < Base
+module RBUI
+  class TypographyLarge < Base
     def view_template(&)
-      p(**attrs, &)
+      div(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "text-sm text-muted-foreground"
+        class: "text-lg font-semibold"
       }
     end
   end

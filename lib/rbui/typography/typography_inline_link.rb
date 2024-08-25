@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class TypographyInlineLink < Base
     def initialize(href:, **attrs)
       super(**attrs)

@@ -13,12 +13,12 @@ class PhlexUI::TabsTest < Minitest::Test
           PhlexUI.TabsTrigger(value: "password") { "Password" }
         end
         PhlexUI.TabsContent(value: "account") do
-          PhlexUI.TypographyLarge { "Account" }
-          PhlexUI.TypographyMuted { "Update your account details." }
+          RBUI.TypographyLarge { "Account" }
+          RBUI.TypographyMuted { "Update your account details." }
         end
         PhlexUI.TabsContent(value: "password") do
-          PhlexUI.TypographyLarge { "Password" }
-          PhlexUI.TypographyMuted { "Change your password here. After saving, you'll be logged out." }
+          RBUI.TypographyLarge { "Password" }
+          RBUI.TypographyMuted { "Change your password here. After saving, you'll be logged out." }
         end
       end
     end

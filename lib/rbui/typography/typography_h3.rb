@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class TypographyLarge < Base
+module RBUI
+  class TypographyH3 < Base
     def view_template(&)
-      div(**attrs, &)
+      h3(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "text-lg font-semibold"
+        class: "scroll-m-20 text-xl font-semibold tracking-tight"
       }
     end
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class TypographyH1 < Base
     def view_template(&)
       h1(**attrs, &)
