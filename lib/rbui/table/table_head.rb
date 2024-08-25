@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class TableHead < Base
     def view_template(&)
       th(**attrs, &)

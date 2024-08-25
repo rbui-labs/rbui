@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Table < Base
     def view_template(&block)
       div(class: "relative w-full overflow-auto") do
