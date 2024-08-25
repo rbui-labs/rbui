@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class TableBody < Base
+module RBUI
+  class TableHeader < Base
     def view_template(&)
-      tbody(**attrs, &)
+      thead(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "[&_tr:last-child]:border-0"
+        class: "[&_tr]:border-b"
       }
     end
   end
