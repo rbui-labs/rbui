@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class Hint < Base
+module RBUI
+  class FormFieldHint < Base
     def view_template(&)
       p(**attrs, &)
     end
@@ -9,9 +9,7 @@ module PhlexUI
     private
 
     def default_attrs
-      {
-        class: "text-[0.8rem] text-muted-foreground"
-      }
+      {class: "text-sm text-muted-foreground"}
     end
   end
 end

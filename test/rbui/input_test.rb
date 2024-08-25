@@ -2,14 +2,14 @@
 
 require "test_helper"
 
-class PhlexUI::HintTest < Minitest::Test
+class RBUI::InputTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.Hint { "Can only contain letters, numbers, and underscores." }
+      RBUI.Input(type: "email", placeholder: "Email")
     end
 
-    assert_match(/Can only contain letters/, output)
+    assert_match(/Email/, output)
   end
 end
