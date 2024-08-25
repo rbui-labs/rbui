@@ -56,9 +56,9 @@ class RBUI::TypographyTest < Minitest::Test
   def test_list
     output = phlex_context do
       RBUI.TypographyList(items: [
-        'Phlex is fast',
-        'Phlex is easy to use',
-        'Phlex is awesome',
+        "Phlex is fast",
+        "Phlex is easy to use",
+        "Phlex is awesome"
       ])
     end
 
@@ -68,9 +68,9 @@ class RBUI::TypographyTest < Minitest::Test
   def test_numbered_list
     output = phlex_context do
       RBUI.TypographyList(items: [
-        'Copy',
-        'Paste',
-        'Customize',
+        "Copy",
+        "Paste",
+        "Customize"
       ], numbered: true)
     end
 
