@@ -9,7 +9,7 @@ class PhlexUI::SheetTest < Minitest::Test
     output = phlex_context do
       PhlexUI.Sheet do
         PhlexUI.SheetTrigger do
-          PhlexUI.Button(variant: :outline) { "Open Sheet" }
+          RBUI.Button(variant: :outline) { "Open Sheet" }
         end
         PhlexUI.SheetContent(class: "sm:max-w-sm") do
           PhlexUI.SheetHeader do
@@ -21,8 +21,8 @@ class PhlexUI::SheetTest < Minitest::Test
             RBUI.Input(placeholder: "joel@drapper.me")
 
             PhlexUI.SheetFooter do
-              PhlexUI.Button(variant: :outline, data: {action: "click->dismissable#dismiss"}) { "Cancel" }
-              PhlexUI.Button(type: "submit") { "Save" }
+              RBUI.Button(variant: :outline, data: {action: "click->dismissable#dismiss"}) { "Cancel" }
+              RBUI.Button(type: "submit") { "Save" }
             end
           end
         end

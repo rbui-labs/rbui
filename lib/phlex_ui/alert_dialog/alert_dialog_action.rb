@@ -3,7 +3,7 @@
 module PhlexUI
   class AlertDialogAction < Base
     def view_template(&)
-      render PhlexUI::Button.new(**attrs, &)
+      render RBUI::Button.new(**attrs, &)
     end
 
     private

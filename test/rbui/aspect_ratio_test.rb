@@ -2,12 +2,12 @@
 
 require "test_helper"
 
-class PhlexUI::AspectRatioTest < Minitest::Test
+class RBUI::AspectRatioTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.AspectRatio(aspect_ratio: "16/9") do |aspect|
+      RBUI.AspectRatio(aspect_ratio: "16/9") do |aspect|
         aspect.img(
           alt: "Placeholder",
           loading: "lazy",

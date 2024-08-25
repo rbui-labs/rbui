@@ -9,7 +9,7 @@ class PhlexUI::DropdownMenuTest < Minitest::Test
     output = phlex_context do
       PhlexUI.DropdownMenu do
         PhlexUI.DropdownMenuTrigger(class: "w-full") do
-          PhlexUI.Button(variant: :outline) { "Open" }
+          RBUI.Button(variant: :outline) { "Open" }
         end
         PhlexUI.DropdownMenuContent do
           PhlexUI.DropdownMenuLabel { "My Account" }

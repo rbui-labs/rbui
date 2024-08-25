@@ -24,13 +24,13 @@ class PhlexUI::CommandTest < Minitest::Test
     output = phlex_context do
       PhlexUI.CommandDialog do
         PhlexUI.CommandDialogTrigger do
-          PhlexUI.Button(variant: "outline", class: "w-56 pr-2 pl-3 justify-between") do |button|
+          RBUI.Button(variant: "outline", class: "w-56 pr-2 pl-3 justify-between") do |button|
             button.div(class: "flex items-center space-x-1") do |div|
               div.span(class: "text-muted-foreground font-normal") do |span|
                 span.plain "Search"
               end
             end
-            PhlexUI.ShortcutKey do |shortcut_key|
+            RBUI.ShortcutKey do |shortcut_key|
               shortcut_key.span(class: "text-xs") { "⌘" }
               shortcut_key.plain "K"
             end

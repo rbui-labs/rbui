@@ -20,7 +20,7 @@ module PhlexUI
       {
         aria: {current: @active ? "page" : nil},
         class: tokens(
-          PhlexUI::Button.new(variant: @active ? :outline : :ghost).attrs[:class]
+          RBUI::Button.new(variant: @active ? :outline : :ghost).attrs[:class]
         )
       }
     end

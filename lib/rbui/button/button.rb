@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Button < Base
     def initialize(variant: :primary, size: :md, icon: false, **attrs)
       @variant = variant.to_sym

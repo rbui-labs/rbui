@@ -2,14 +2,14 @@
 
 require "test_helper"
 
-class PhlexUI::LinkTest < Minitest::Test
+class RBUI::BadgeTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.Link(href: "#") { "Link" }
+      RBUI.Badge { "Badge" }
     end
 
-    assert_match(/Link/, output)
+    assert_match(/Badge/, output)
   end
 end
