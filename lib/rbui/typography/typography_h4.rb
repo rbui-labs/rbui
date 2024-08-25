@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class TypographyListItem < Base
+module RBUI
+  class TypographyH4 < Base
     def view_template(&)
-      li(**attrs, &)
+      h4(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "leading-7"
+        class: "scroll-m-20 text-lg font-medium tracking-tight"
       }
     end
   end

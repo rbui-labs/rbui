@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class TypographyBlockquote < Base
+module RBUI
+  class TypographyListItem < Base
     def view_template(&)
-      blockquote(**attrs, &)
+      li(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "mt-6 border-l-2 pl-6 italic"
+        class: "leading-7"
       }
     end
   end
