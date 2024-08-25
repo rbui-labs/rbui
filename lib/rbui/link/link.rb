@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Link < Base
     def initialize(href: "#", variant: :link, size: :md, icon: false, **attrs)
       @href = href

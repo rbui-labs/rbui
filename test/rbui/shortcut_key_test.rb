@@ -2,12 +2,12 @@
 
 require "test_helper"
 
-class PhlexUI::ShortcutKeyTest < Minitest::Test
+class RBUI::ShortcutKeyTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.ShortcutKey do |shortcut|
+      RBUI.ShortcutKey do |shortcut|
         shortcut.span(class: "text-xs") { "⌘" }
         shortcut.plain "K"
       end

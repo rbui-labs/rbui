@@ -2,7 +2,7 @@
 
 require "rouge"
 
-module PhlexUI
+module RBUI
   class Codeblock < Base
     FORMATTER = ::Rouge::Formatters::HTML.new
     ROUGE_CSS = Rouge::Themes::Github.mode(:dark).render(scope: ".highlight") # See themes here: https://rouge-ruby.github.io/docs/Rouge/CSSTheme.html
@@ -45,7 +45,7 @@ module PhlexUI
         end
         div(class: "absolute top-2 right-2") do
           PhlexUI.ClipboardTrigger do
-            PhlexUI.Button(variant: :ghost, size: :sm, icon: true, class: "text-white hover:text-white hover:bg-white/20") { clipboard_icon }
+            RBUI.Button(variant: :ghost, size: :sm, icon: true, class: "text-white hover:text-white hover:bg-white/20") { clipboard_icon }
           end
         end
       end

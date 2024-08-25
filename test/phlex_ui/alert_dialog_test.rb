@@ -9,7 +9,7 @@ class PhlexUI::AlertDialogTest < Minitest::Test
     output = phlex_context do
       PhlexUI.AlertDialog do
         PhlexUI.AlertDialogTrigger do
-          PhlexUI.Button { "Show dialog" }
+          RBUI.Button { "Show dialog" }
         end
         PhlexUI.AlertDialogContent do
           PhlexUI.AlertDialogHeader do

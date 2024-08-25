@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Badge < Base
     SIZES = {
       sm: "px-1.5 py-0.5 text-xs",

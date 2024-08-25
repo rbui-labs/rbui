@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class AspectRatio < Base
     def initialize(aspect_ratio: "16/9", **attrs)
       raise "aspect_ratio must be in the format of a string with a slash in the middle (eg. '16/9', '1/1')" unless aspect_ratio.is_a?(String) && aspect_ratio.include?("/")

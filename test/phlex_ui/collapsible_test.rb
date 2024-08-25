@@ -9,7 +9,7 @@ class PhlexUI::CollapsibleTest < Minitest::Test
     output = phlex_context do
       PhlexUI.Collapsible(open: true) do
         PhlexUI.CollapsibleTrigger do
-          PhlexUI.Button(variant: :ghost, icon: true) do |button|
+          RBUI.Button(variant: :ghost, icon: true) do |button|
             button.span(class: "sr-only") { "Toggle" }
           end
         end

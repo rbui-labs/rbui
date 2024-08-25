@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ShortcutKey < Base
     def view_template(&)
       kbd(**attrs, &)

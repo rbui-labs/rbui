@@ -13,7 +13,7 @@ class PhlexUI::CardTest < Minitest::Test
           PhlexUI.CardDescription { "@joeldrapper" }
         end
         PhlexUI.CardContent do
-          PhlexUI.AspectRatio(aspect_ratio: "16/9", class: "rounded-md overflow-hidden border") do |aspect_ratio|
+          RBUI.AspectRatio(aspect_ratio: "16/9", class: "rounded-md overflow-hidden border") do |aspect_ratio|
             aspect_ratio.img(
               alt: "Placeholder",
               loading: "lazy",
@@ -22,8 +22,8 @@ class PhlexUI::CardTest < Minitest::Test
           end
         end
         PhlexUI.CardFooter(class: "flex justify-end gap-x-2") do
-          PhlexUI.Button(variant: :outline) { "See more" }
-          PhlexUI.Button(variant: :primary) { "Buy now" }
+          RBUI.Button(variant: :outline) { "See more" }
+          RBUI.Button(variant: :primary) { "Buy now" }
         end
       end
     end

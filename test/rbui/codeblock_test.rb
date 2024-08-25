@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::CodeblockTest < Minitest::Test
+class RBUI::CodeblockTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
@@ -13,7 +13,7 @@ class PhlexUI::CodeblockTest < Minitest::Test
     CODE
 
     output = phlex_context do
-      PhlexUI.Codeblock(code, syntax: :ruby)
+      RBUI.Codeblock(code, syntax: :ruby)
     end
 
     assert_match(/Hello/, output)
