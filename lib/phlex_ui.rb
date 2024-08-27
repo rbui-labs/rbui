@@ -1,6 +1,14 @@
 require "json"
 require "phlex"
 
+if defined?(ActiveSupport::Inflector)
+  require "active_support/inflector"
+  ActiveSupport::Inflector.inflections(:en) do |inflect|
+    inflect.acronym "PhlexUI"
+    inflect.acronym "UI"
+  end
+end
+
 module RBUI
   extend Phlex::Kit
 end
@@ -46,3 +54,9 @@ require_relative "rbui/base"
 # Manually require all the files
 Dir.glob(File.join(__dir__, "phlex_ui", "**", "*.rb")).sort.each { |file| require file }
 Dir.glob(File.join(__dir__, "rbui", "**", "*.rb")).sort.each { |file| require file }
+
+# If you need to require generators (assuming they're needed)
+if defined?(Rails::Generators)
+  require_relative "generators/rbui/install/install_generator"
+  require_relative "generators/rbui/component_generator"
+end
