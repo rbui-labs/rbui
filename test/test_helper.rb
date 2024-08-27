@@ -17,3 +17,9 @@ end
 def phlex_context(&)
   render TestContext.new, &
 end
+
+# this is a tracepoint that will output the path of all files loaded that contain the string "phlex"
+# trace = TracePoint.new(:class) do |tp|
+#   puts "Loaded: #{tp.path}" if tp.path.include?("phlex")
+# end
+# trace.enable
