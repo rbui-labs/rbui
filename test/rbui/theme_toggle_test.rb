@@ -9,11 +9,11 @@ class RBUI::ThemeToggleTest < Minitest::Test
     output = phlex_context do
       RBUI.ThemeToggle do |toggle|
         toggle.light_mode do
-          PhlexUI.Button(variant: :primary) { "Light" }
+          RBUI.Button(variant: :primary) { "Light" }
         end
 
         toggle.dark_mode do
-          PhlexUI.Button(variant: :primary) { "Dark" }
+          RBUI.Button(variant: :primary) { "Dark" }
         end
       end
     end

@@ -9,7 +9,7 @@ class PhlexUI::DialogTest < Minitest::Test
     output = phlex_context do
       PhlexUI.Dialog do
         PhlexUI.DialogTrigger do
-          PhlexUI.Button { "Open Dialog" }
+          RBUI.Button { "Open Dialog" }
         end
         PhlexUI.DialogContent do
           PhlexUI.DialogHeader do
@@ -17,7 +17,7 @@ class PhlexUI::DialogTest < Minitest::Test
             PhlexUI.DialogDescription { "PhlexUI helps you build accessible standard compliant web apps with ease" }
           end
           PhlexUI.DialogMiddle do
-            PhlexUI.AspectRatio(aspect_ratio: "16/9", class: "rounded-md overflow-hidden border") do |aspect|
+            RBUI.AspectRatio(aspect_ratio: "16/9", class: "rounded-md overflow-hidden border") do |aspect|
               aspect.img(
                 alt: "Placeholder",
                 loading: "lazy",
@@ -26,8 +26,8 @@ class PhlexUI::DialogTest < Minitest::Test
             end
           end
           PhlexUI.DialogFooter do
-            PhlexUI.Button(variant: :outline, data: {action: "click->dismissable#dismiss"}) { "Cancel" }
-            PhlexUI.Button { "Save" }
+            RBUI.Button(variant: :outline, data: {action: "click->dismissable#dismiss"}) { "Cancel" }
+            RBUI.Button { "Save" }
           end
         end
       end

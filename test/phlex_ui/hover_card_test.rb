@@ -9,7 +9,7 @@ class PhlexUI::HoverCardTest < Minitest::Test
     output = phlex_context do
       PhlexUI.HoverCard do
         PhlexUI.HoverCardTrigger do
-          PhlexUI.Button(variant: :link) { "@joeldrapper" }
+          RBUI.Button(variant: :link) { "@joeldrapper" }
         end
         PhlexUI.HoverCardContent do |card_content|
           card_content.div(class: "flex justify-between space-x-4") do

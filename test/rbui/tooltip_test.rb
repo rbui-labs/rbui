@@ -9,10 +9,10 @@ class RBUI::TooltipTest < Minitest::Test
     output = phlex_context do
       RBUI.Tooltip do
         RBUI.TooltipTrigger do
-          PhlexUI.Button(variant: :outline, icon: true) { "?" }
+          RBUI.Button(variant: :outline, icon: true) { "?" }
         end
         RBUI.TooltipContent do
-          PhlexUI.TypographyP { "Add to library" }
+          RBUI.TypographyP { "Add to library" }
         end
       end
     end

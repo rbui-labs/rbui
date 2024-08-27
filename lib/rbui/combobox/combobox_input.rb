@@ -12,7 +12,9 @@ module RBUI
       {
         class: "hidden",
         data: {
-          rbui__combobox_target: "input"
+          rbui__combobox_target: "input",
+          rbui__form_field_target: "input",
+          action: "change->rbui--form-field#onChange invalid->rbui--form-field#onInvalid"
         }
       }
     end
