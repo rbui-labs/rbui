@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class SheetFooter < Base
+module RBUI
+  class SheetMiddle < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        class: "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 gap-y-2 sm:gap-y-0"
+        class: "py-4"
       }
     end
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class SheetContent < Base
     SIDE_CLASS = {
       top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
@@ -16,8 +16,8 @@ module PhlexUI
     end
 
     def view_template(&block)
-      template_tag(data: {sheet_target: "content"}) do
-        div(data: {controller: "dismissable"}) do
+      template_tag(data: {rbui__sheet_target: "content"}) do
+        div(data: {controller: "rbui--sheet-content"}) do
           backdrop
           div(**attrs) do
             block&.call
@@ -43,7 +43,7 @@ module PhlexUI
       button(
         type: "button",
         class: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground",
-        data_action: "click->dismissable#dismiss"
+        data_action: "click->rbui--sheet-content#close"
       ) do
         svg(
           width: "15",
@@ -68,7 +68,7 @@ module PhlexUI
     def backdrop
       div(
         data_state: "open",
-        data_action: "click->dismissable#dismiss",
+        data_action: "click->rbui--sheet-content#close",
         class:
               "fixed pointer-events-auto inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
       )
