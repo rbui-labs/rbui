@@ -21,7 +21,7 @@ class PhlexUI::SheetTest < Minitest::Test
             RBUI.Input(placeholder: "joel@drapper.me")
 
             PhlexUI.SheetFooter do
-              RBUI.Button(variant: :outline, data: {action: "click->dismissable#dismiss"}) { "Cancel" }
+              RBUI.Button(variant: :outline, data: {action: "click->rbui--sheet-content#close"}) { "Cancel" }
               RBUI.Button(type: "submit") { "Save" }
             end
           end
