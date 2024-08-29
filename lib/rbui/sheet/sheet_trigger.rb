@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class Sheet < Base
+module RBUI
+  class SheetTrigger < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        data: {controller: "sheet"}
+        data: {action: "click->rbui--sheet#open"}
       }
     end
   end

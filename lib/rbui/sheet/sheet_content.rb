@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class SheetContent < Base
     SIDE_CLASS = {
       top: "inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top",
@@ -16,7 +16,7 @@ module PhlexUI
     end
 
     def view_template(&block)
-      template_tag(data: {sheet_target: "content"}) do
+      template_tag(data: {rbui__sheet_target: "content"}) do
         div(data: {controller: "dismissable"}) do
           backdrop
           div(**attrs) do
