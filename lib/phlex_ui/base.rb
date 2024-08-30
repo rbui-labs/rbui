@@ -5,7 +5,7 @@ require "tailwind_merge"
 module PhlexUI
   class Base < Phlex::HTML
     TAILWIND_MERGER = TailwindMerge::Merger.new.freeze
-    
+
     attr_reader :attrs
 
     def initialize(**user_attrs)
