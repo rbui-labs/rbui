@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Alert < Base
     def initialize(variant: nil, **attrs)
       @variant = variant

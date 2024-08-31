@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class AlertTitle < Base
+module RBUI
+  class AlertDescription < Base
     def view_template(&)
-      h5(**attrs, &)
+      div(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "mb-1 font-medium leading-none tracking-tight"
+        class: "text-sm [&_p]:leading-relaxed"
       }
     end
   end

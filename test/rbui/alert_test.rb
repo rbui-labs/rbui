@@ -7,9 +7,9 @@ class PhlexUI::AlertTest < Minitest::Test
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.Alert do
-        PhlexUI.AlertTitle { "Pro tip" }
-        PhlexUI.AlertDescription { "Simply, don't include an icon and your alert will look like this." }
+      RBUI.Alert do
+        RBUI.AlertTitle { "Pro tip" }
+        RBUI.AlertDescription { "Simply, don't include an icon and your alert will look like this." }
       end
     end
 
