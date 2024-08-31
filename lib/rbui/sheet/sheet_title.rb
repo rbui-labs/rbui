@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class SheetDescription < Base
+module RBUI
+  class SheetTitle < Base
     def view_template(&)
-      p(**attrs, &)
+      h3(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "text-sm text-muted-foreground"
+        class: "text-lg font-semibold leading-none tracking-tight"
       }
     end
   end

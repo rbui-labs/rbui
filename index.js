@@ -17,6 +17,8 @@ import ThemeToggleController from "./lib/rbui/theme_toggle/theme_toggle_controll
 import TooltipController from "./lib/rbui/tooltip/tooltip_controller";
 import SelectController from "./lib/rbui/select/select_controller";
 import SelectItemController from "./lib/rbui/select/select_item_controller";
+import SheetController from "./lib/rbui/sheet/sheet_controller";
+import SheetContentController from "./lib/rbui/sheet/sheet_content_controller";
 
 // Register all controllers
 application.register("rbui--accordion", AccordionController);
@@ -28,6 +30,8 @@ application.register("rbui--theme-toggle", ThemeToggleController);
 application.register("rbui--tooltip", TooltipController);
 application.register("rbui--select", SelectController);
 application.register("rbui--select-item", SelectItemController);
+application.register("rbui--sheet", SheetController);
+application.register("rbui--sheet-content", SheetContentController);
 
 // Export all controllers so user of npm package can lazy load controllers
 export { default as AccordionController } from "./lib/rbui/accordion/accordion_controller";
@@ -39,6 +43,8 @@ export { default as ThemeToggleController } from "./lib/rbui/theme_toggle/theme_
 export { default as TooltipController } from "./lib/rbui/tooltip/tooltip_controller";
 export { default as SelectController } from "./lib/rbui/select/select_controller";
 export { default as SelectItemController } from "./lib/rbui/select/select_item_controller";
+export { default as SheetController } from "./lib/rbui/sheet/sheet_controller";
+export { default as SheetContentController } from "./lib/rbui/sheet/sheet_content_controller";
 
 // Export application
 export { application };
