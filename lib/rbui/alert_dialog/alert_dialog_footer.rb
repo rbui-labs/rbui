@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class AlertDialogHeader < Base
+module RBUI
+  class AlertDialogFooter < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        class: "flex flex-col space-y-2 text-center sm:text-left"
+        class: "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
       }
     end
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class AlertDialog < Base
     def initialize(open: false, **attrs)
       @open = open
@@ -16,7 +16,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "alert-dialog",
+          controller: "rbui--alert-dialog",
           alert_dialog_open_value: @open.to_s
         },
         class: "inline-block"
