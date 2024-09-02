@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class CollapsibleTrigger < Base
+module RBUI
+  class CollapsibleContent < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,9 +10,8 @@ module PhlexUI
 
     def default_attrs
       {
-        data: {
-          action: "click->collapsible#toggle"
-        }
+        data: {rbui__collapsible_target: "content"},
+        class: "overflow-y-hidden"
       }
     end
   end

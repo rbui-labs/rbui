@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Collapsible < Base
     def initialize(open: false, **attrs)
       @open = open
@@ -16,8 +16,8 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "collapsible",
-          collapsible_open_value: @open
+          controller: "rbui--collapsible",
+          rbui__collapsible_open_value: @open
         }
       }
     end

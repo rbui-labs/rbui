@@ -9,6 +9,7 @@ window.Stimulus = application;
 
 // Import all controller files
 import AccordionController from "./lib/rbui/accordion/accordion_controller";
+import CollapsibleController from "./lib/rbui/collapsible/collapsible_controller";
 import ComboboxController from "./lib/rbui/combobox/combobox_controller";
 import ComboboxContentController from "./lib/rbui/combobox/combobox_content_controller";
 import ComboboxItemController from "./lib/rbui/combobox/combobox_item_controller";
@@ -22,6 +23,7 @@ import SheetContentController from "./lib/rbui/sheet/sheet_content_controller";
 
 // Register all controllers
 application.register("rbui--accordion", AccordionController);
+application.register("rbui--collapsible", CollapsibleController);
 application.register("rbui--combobox", ComboboxController);
 application.register("rbui--combobox-content", ComboboxContentController);
 application.register("rbui--combobox-item", ComboboxItemController);
@@ -35,6 +37,7 @@ application.register("rbui--sheet-content", SheetContentController);
 
 // Export all controllers so user of npm package can lazy load controllers
 export { default as AccordionController } from "./lib/rbui/accordion/accordion_controller";
+export { default as CollapsibleController } from "./lib/rbui/collapsible/collapsible_controller";
 export { default as ComboboxController } from "./lib/rbui/combobox/combobox_controller";
 export { default as ComboboxContentController } from "./lib/rbui/combobox/combobox_content_controller";
 export { default as ComboboxItemController } from "./lib/rbui/combobox/combobox_item_controller";
