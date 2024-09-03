@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class CalendarWeekdays < Base
     DAYS = %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday].freeze
 
     def view_template
-      template_tag(data: {calendar_target: "weekdaysTemplate"}) do
+      template_tag(data: {rbui__calendar_target: "weekdaysTemplate"}) do
         thead(**attrs) do
           tr(class: "flex") do
             DAYS.each do |day|

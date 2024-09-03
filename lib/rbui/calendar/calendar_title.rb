@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class CalendarTitle < Base
     def initialize(default: "Month Year", **attrs)
       @default = default
@@ -19,7 +19,7 @@ module PhlexUI
         aria_live: "polite",
         role: "presentation",
         data: {
-          calendar_target: "title"
+          rbui__calendar_target: "title"
         }
       }
     end

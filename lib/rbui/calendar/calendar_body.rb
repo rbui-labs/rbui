@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class CalendarBody < Base
     def view_template
       table(**attrs)
@@ -11,7 +11,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          calendar_target: "calendar"
+          rbui__calendar_target: "calendar"
         }
       }
     end
