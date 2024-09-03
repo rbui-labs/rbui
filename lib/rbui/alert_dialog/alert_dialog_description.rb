@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class AlertDialogAction < Base
+module RBUI
+  class AlertDialogDescription < Base
     def view_template(&)
-      render RBUI::Button.new(**attrs, &)
+      p(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        variant: :primary
+        class: "text-sm text-muted-foreground"
       }
     end
   end

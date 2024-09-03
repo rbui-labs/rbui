@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class AlertDialogCancel < Base
     def view_template(&)
       render RBUI::Button.new(**attrs, &)
@@ -12,7 +12,7 @@ module PhlexUI
       {
         variant: :outline,
         data: {
-          action: "click->dismissable#dismiss"
+          action: "click->rbui--alert-dialog#dismiss"
         },
         class: "mt-2 sm:mt-0"
       }

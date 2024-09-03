@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class AlertDialogTrigger < Base
+module RBUI
+  class AlertDialogHeader < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,8 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        data: {action: "click->alert-dialog#open"},
-        class: "inline-block"
+        class: "flex flex-col space-y-2 text-center sm:text-left"
       }
     end
   end

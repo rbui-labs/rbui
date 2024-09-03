@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Avatar < Base
     SIZES = {
       xs: "h-4 w-4 text-[0.5rem]",

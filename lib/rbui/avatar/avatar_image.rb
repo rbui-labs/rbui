@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class AvatarImage < Base
     def initialize(src:, alt: "", **attrs)
       @src = src

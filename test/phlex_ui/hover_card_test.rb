@@ -13,9 +13,9 @@ class PhlexUI::HoverCardTest < Minitest::Test
         end
         PhlexUI.HoverCardContent do |card_content|
           card_content.div(class: "flex justify-between space-x-4") do
-            PhlexUI.Avatar do
-              PhlexUI.AvatarImage(src: "https://avatars.githubusercontent.com/u/246692?v=4", alt: "joeldrapper")
-              PhlexUI.AvatarFallback { "JD" }
+            RBUI.Avatar do
+              RBUI.AvatarImage(src: "https://avatars.githubusercontent.com/u/246692?v=4", alt: "joeldrapper")
+              RBUI.AvatarFallback { "JD" }
             end
           end
         end
