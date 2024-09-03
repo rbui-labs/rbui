@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class AlertDialogFooter < Base
+module RBUI
+  class AlertDialogTrigger < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,7 +10,8 @@ module PhlexUI
 
     def default_attrs
       {
-        class: "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
+        data: {action: "click->rbui--alert-dialog#open"},
+        class: "inline-block"
       }
     end
   end
