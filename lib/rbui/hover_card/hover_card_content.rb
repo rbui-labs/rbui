@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class HoverCardContent < Base
     def view_template(&block)
-      template_tag(data: {popover_target: "content"}) do
+      template_tag(data: {rbui__hover_card_target: "content"}) do
         div(**attrs, &block)
       end
     end

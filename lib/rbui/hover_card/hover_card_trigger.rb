@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class HoverCardTrigger < Base
     def view_template(&)
       div(**attrs, &)
@@ -11,7 +11,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          popover_target: "trigger"
+          rbui__hover_card_target: "trigger"
         },
         class: "inline-block"
       }
