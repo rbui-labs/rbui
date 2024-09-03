@@ -31,7 +31,7 @@ module RBUI
           controller: "rbui--calendar",
           rbui__calendar_selected_date_value: @selected_date&.to_s,
           rbui__calendar_format_value: @date_format,
-          rbui__calendar_input_outlet: @input_id
+          rbui__calendar_rbui__input_outlet: @input_id
         }
       }
     end
