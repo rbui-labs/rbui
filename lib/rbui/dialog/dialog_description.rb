@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class DialogMiddle < Base
+module RBUI
+  class DialogDescription < Base
     def view_template(&)
-      div(**attrs, &)
+      p(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "py-4"
+        class: "text-sm text-muted-foreground"
       }
     end
   end
