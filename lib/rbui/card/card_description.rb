@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class CardFooter < Base
+module RBUI
+  class CardDescription < Base
     def view_template(&)
-      div(**attrs, &)
+      p(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "items-center p-6 pt-0"
+        class: "text-sm text-muted-foreground"
       }
     end
   end

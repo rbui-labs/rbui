@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class CardTitle < Base
+module RBUI
+  class CardContent < Base
     def view_template(&)
-      h3(**attrs, &)
+      div(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
-        class: "font-semibold leading-none tracking-tight"
+        class: "p-6 pt-0"
       }
     end
   end

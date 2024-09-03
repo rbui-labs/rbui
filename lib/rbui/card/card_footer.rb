@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class Card < Base
+module RBUI
+  class CardFooter < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        class: "rounded-xl border bg-background shadow"
+        class: "items-center p-6 pt-0"
       }
     end
   end
