@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
 module RBUI
-  class FormFieldError < Base
+  class CheckboxGroup < Base
     def view_template(&)
-      p(**attrs, &)
+      div(**attrs, &)
     end
 
     private
 
     def default_attrs
       {
+        role: "group",
         data: {
-          rbui__form_field_target: "error"
-        },
-        class: "text-sm font-medium text-destructive"
+          controller: "rbui--checkbox-group"
+        }
       }
     end
   end
