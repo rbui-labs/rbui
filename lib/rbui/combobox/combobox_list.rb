@@ -22,8 +22,7 @@ module RBUI
           rbui__combobox_target: "list"
         },
         role: "listbox",
-        tabindex: "-1",
-        class: "max-h-[300px] overflow-y-auto overflow-x-hidden"
+        tabindex: "-1"
       }
     end
   end
