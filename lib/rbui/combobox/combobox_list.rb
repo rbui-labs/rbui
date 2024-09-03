@@ -22,7 +22,7 @@ module RBUI
           rbui__combobox_target: "list"
         },
         role: "listbox",
-        tabindex: "-1",
+        tabindex: "-1"
       }
     end
   end
