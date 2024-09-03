@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ContextMenuTrigger < Base
     def view_template(&)
       div(**attrs, &)
@@ -11,8 +11,8 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          popover_target: "trigger",
-          action: "contextmenu->popover#handleContextMenu"
+          rbui__context_menu_target: "trigger",
+          action: "contextmenu->rbui--context-menu#handleContextMenu"
         }
       }
     end
