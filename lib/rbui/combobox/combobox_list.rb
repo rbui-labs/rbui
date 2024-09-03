@@ -23,7 +23,6 @@ module RBUI
         },
         role: "listbox",
         tabindex: "-1",
-        class: "max-h-[300px] overflow-y-auto overflow-x-hidden"
       }
     end
   end
