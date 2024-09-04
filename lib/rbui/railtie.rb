@@ -13,14 +13,6 @@ module RBUI
         end
       end
 
-      # Add Zeitwerk configuration
-      initializer "rbui.configure_zeitwerk" do
-        Rails.autoloaders.main.inflector.inflect(
-          "phlex_ui" => "PhlexUI",
-          "phlexui" => "PhlexUI"
-        )
-      end
-
       # Add component loading
       config.to_prepare do
         # Define the path to the RBUI components
