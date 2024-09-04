@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class PaginationItem < Base
     def initialize(href: "#", active: false, **attrs)
       @href = href
