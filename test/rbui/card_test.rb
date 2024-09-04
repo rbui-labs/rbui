@@ -7,12 +7,12 @@ class PhlexUI::CardTest < Minitest::Test
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.Card(class: "w-96") do
-        PhlexUI.CardHeader do
-          PhlexUI.CardTitle { 'You might like "PhlexUI"' }
-          PhlexUI.CardDescription { "@joeldrapper" }
+      RBUI.Card(class: "w-96") do
+        RBUI.CardHeader do
+          RBUI.CardTitle { 'You might like "RBUI"' }
+          RBUI.CardDescription { "@joeldrapper" }
         end
-        PhlexUI.CardContent do
+        RBUI.CardContent do
           RBUI.AspectRatio(aspect_ratio: "16/9", class: "rounded-md overflow-hidden border") do |aspect_ratio|
             aspect_ratio.img(
               alt: "Placeholder",
@@ -21,7 +21,7 @@ class PhlexUI::CardTest < Minitest::Test
             )
           end
         end
-        PhlexUI.CardFooter(class: "flex justify-end gap-x-2") do
+        RBUI.CardFooter(class: "flex justify-end gap-x-2") do
           RBUI.Button(variant: :outline) { "See more" }
           RBUI.Button(variant: :primary) { "Buy now" }
         end
