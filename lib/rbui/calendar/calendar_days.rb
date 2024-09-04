@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class CalendarDays < Base
     BASE_CLASS = "inline-flex items-center justify-center rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-8 w-8 p-0 font-normal aria-selected:opacity-100"
 
@@ -17,7 +17,7 @@ module PhlexUI
       date_template("selectedDateTemplate") do
         button(
           data_day: "{{day}}",
-          data_action: " click->calendar#selectDay",
+          data_action: "click->rbui--calendar#selectDay",
           name: "day",
           class:
                 tokens(
@@ -36,7 +36,7 @@ module PhlexUI
       date_template("todayDateTemplate") do
         button(
           data_day: "{{day}}",
-          data_action: " click->calendar#selectDay",
+          data_action: "click->rbui--calendar#selectDay",
           name: "day",
           class:
                 tokens(
@@ -54,7 +54,7 @@ module PhlexUI
       date_template("currentMonthDateTemplate") do
         button(
           data_day: "{{day}}",
-          data_action: " click->calendar#selectDay",
+          data_action: "click->rbui--calendar#selectDay",
           name: "day",
           class:
                 tokens(
@@ -72,7 +72,7 @@ module PhlexUI
       date_template("otherMonthDateTemplate") do
         button(
           data_day: "{{day}}",
-          data_action: " click->calendar#selectDay",
+          data_action: " click->rbui--calendar#selectDay",
           name: "day",
           class:
                 tokens(
@@ -87,7 +87,7 @@ module PhlexUI
     end
 
     def date_template(target, &block)
-      template_tag(data: {calendar_target: target}) do
+      template_tag(data: {rbui__calendar_target: target}) do
         td(
           class:
                 "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent [&:has([aria-selected])]:rounded-md",

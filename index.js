@@ -10,6 +10,8 @@ window.Stimulus = application;
 // Import all controller files
 import AccordionController from "./lib/rbui/accordion/accordion_controller";
 import AlertDialogController from "./lib/rbui/alert_dialog/alert_dialog_controller";
+import CalendarController from "./lib/rbui/calendar/calendar_controller";
+import CalendarInputController from "./lib/rbui/calendar/calendar_input_controller";
 import CollapsibleController from "./lib/rbui/collapsible/collapsible_controller";
 import CheckboxGroupController from "./lib/rbui/checkbox/checkbox_group_controller";
 import ComboboxController from "./lib/rbui/combobox/combobox_controller";
@@ -27,6 +29,8 @@ import SheetContentController from "./lib/rbui/sheet/sheet_content_controller";
 // Register all controllers
 application.register("rbui--accordion", AccordionController);
 application.register("rbui--alert-dialog", AlertDialogController);
+application.register("rbui--calendar", CalendarController);
+application.register("rbui--calendar-input", CalendarInputController);
 application.register("rbui--collapsible", CollapsibleController);
 application.register("rbui--checkbox-group", CheckboxGroupController);
 application.register("rbui--combobox", ComboboxController);
@@ -44,6 +48,8 @@ application.register("rbui--sheet-content", SheetContentController);
 // Export all controllers so user of npm package can lazy load controllers
 export { default as AccordionController } from "./lib/rbui/accordion/accordion_controller";
 export { default as AlertDialogController } from "./lib/rbui/alert_dialog/alert_dialog_controller";
+export { default as CalendarController } from "./lib/rbui/calendar/calendar_controller";
+export { default as CalendarInputController } from "./lib/rbui/calendar/calendar_input_controller";
 export { default as CollapsibleController } from "./lib/rbui/collapsible/collapsible_controller";
 export { default as CheckboxGroupController } from "./lib/rbui/checkbox/checkbox_group_controller";
 export { default as ComboboxController } from "./lib/rbui/combobox/combobox_controller";
