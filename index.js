@@ -19,6 +19,7 @@ import ComboboxContentController from "./lib/rbui/combobox/combobox_content_cont
 import ComboboxItemController from "./lib/rbui/combobox/combobox_item_controller";
 import DialogController from "./lib/rbui/dialog/dialog_controller";
 import FormFieldController from "./lib/rbui/form/form_field_controller";
+import HoverCardController from "./lib/rbui/hover_card/hover_card_controller";
 import ThemeToggleController from "./lib/rbui/theme_toggle/theme_toggle_controller";
 import TooltipController from "./lib/rbui/tooltip/tooltip_controller";
 import SelectController from "./lib/rbui/select/select_controller";
@@ -38,6 +39,7 @@ application.register("rbui--combobox-content", ComboboxContentController);
 application.register("rbui--combobox-item", ComboboxItemController);
 application.register("rbui--dialog", DialogController);
 application.register("rbui--form-field", FormFieldController);
+application.register("rbui--hover-card", HoverCardController);
 application.register("rbui--theme-toggle", ThemeToggleController);
 application.register("rbui--tooltip", TooltipController);
 application.register("rbui--select", SelectController);
@@ -57,6 +59,7 @@ export { default as ComboboxContentController } from "./lib/rbui/combobox/combob
 export { default as ComboboxItemController } from "./lib/rbui/combobox/combobox_item_controller";
 export { default as DialogController } from "./lib/rbui/dialog/dialog_controller";
 export { default as FormFieldController } from "./lib/rbui/form/form_field_controller";
+export { default as HoverCardController } from "./lib/rbui/hover_card/hover_card_controller";
 export { default as ThemeToggleController } from "./lib/rbui/theme_toggle/theme_toggle_controller";
 export { default as TooltipController } from "./lib/rbui/tooltip/tooltip_controller";
 export { default as SelectController } from "./lib/rbui/select/select_controller";

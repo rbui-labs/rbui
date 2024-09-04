@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class HoverCard < Base
     def initialize(option: {}, **attrs)
       @options = option
@@ -18,8 +18,8 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "popover",
-          popover_options_value: @options.to_json
+          controller: "rbui--hover-card",
+          rbui__hover_card_options_value: @options.to_json
         }
       }
     end
