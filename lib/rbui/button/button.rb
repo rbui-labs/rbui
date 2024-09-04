@@ -2,7 +2,8 @@
 
 module RBUI
   class Button < Base
-    def initialize(variant: :primary, size: :md, icon: false, **attrs)
+    def initialize(type: :button, variant: :primary, size: :md, icon: false, **attrs)
+      @type = type
       @variant = variant.to_sym
       @size = size.to_sym
       @icon = icon
@@ -88,7 +89,7 @@ module RBUI
 
     def default_attrs
       {
-        type: "button",
+        type: @type,
         class: default_classes
       }
     end

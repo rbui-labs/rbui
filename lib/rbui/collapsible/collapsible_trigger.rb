@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module RBUI
-  class FormFieldError < Base
+  class CollapsibleTrigger < Base
     def view_template(&)
-      p(**attrs, &)
+      div(**attrs, &)
     end
 
     private
@@ -11,9 +11,8 @@ module RBUI
     def default_attrs
       {
         data: {
-          rbui__form_field_target: "error"
-        },
-        class: "text-sm font-medium text-destructive"
+          action: "click->rbui--collapsible#toggle"
+        }
       }
     end
   end
