@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class DialogTrigger < Base
     def view_template(&)
       div(**attrs, &)
@@ -11,7 +11,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          action: "click->dialog#open"
+          action: "click->rbui--dialog#open"
         },
         class: "inline-block"
       }
