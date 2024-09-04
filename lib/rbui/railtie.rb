@@ -12,14 +12,6 @@ module RBUI
           Rails::Generators.namespace(RBUI::Generators, as: "rbui")
         end
       end
-
-      # Add Zeitwerk configuration
-      initializer "rbui.configure_zeitwerk" do
-        Rails.autoloaders.main.inflector.inflect(
-          "phlex_ui" => "PhlexUI",
-          "phlexui" => "PhlexUI"
-        )
-      end
     end
   end
 end
