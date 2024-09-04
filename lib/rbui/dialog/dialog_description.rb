@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class FormFieldError < Base
+  class DialogDescription < Base
     def view_template(&)
       p(**attrs, &)
     end
@@ -10,10 +10,7 @@ module RBUI
 
     def default_attrs
       {
-        data: {
-          rbui__form_field_target: "error"
-        },
-        class: "text-sm font-medium text-destructive"
+        class: "text-sm text-muted-foreground"
       }
     end
   end
