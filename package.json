@@ -2,7 +2,7 @@
   "name": "rbui-js",
   "version": "0.0.1-alpha.0",
   "description": "Stimulus controllers for PhlexUI Component Library",
-  "main": "index.js",
+  "main": "lib/rbui/index.js",
   "homepage": "https://phlexui.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -3,52 +3,105 @@ module RBUI
     class ComponentGenerator < defined?(Rails::Generators::Base) ? Rails::Generators::Base : Object
       namespace "rbui:component"
 
-      if defined?(Rails::Generators::Base)
-        # Set the source root to the root of the gem
-        source_root File.expand_path("../../..", __dir__)
+      source_root File.expand_path("../../..", __dir__)
+      argument :component_name, type: :string, required: true
 
-        # Define a required argument for the component name
-        argument :component_name, type: :string, required: true
+      def copy_component
+        return puts "This generator can only be run in a Rails environment." unless defined?(Rails::Generators::Base)
 
-        def copy_component_files
-          # Convert component name to lowercase
-          component = component_name.downcase
+        copy_common_files
+        copy_component_files
+      end
 
-          # Define source and destination paths
-          source_path = "lib/rbui"
-          destination_path = "app/components/rbui"
+      private
 
-          # Full path to the component in the gem
-          component_source = File.join(self.class.source_root, source_path, component)
+      def copy_common_files
+        template "#{template_dir}/index.js", "#{destination_path}/index.js" unless File.exist?("#{destination_path}/index.js")
+        copy_file File.join(source_path, "base.rb"), File.join(destination_path, "base.rb")
 
-          if File.directory?(component_source)
-            copy_directory(component, destination_path)
-          elsif File.exist?("#{component_source}.rb")
-            copy_single_file(component, source_path, destination_path)
-          else
-            puts "Component '#{component}' not found in phlex_ui gem"
-          end
+        append_to_file "app/javascript/application.js", "\nimport \"../components/rbui\";\n"
+      end
+
+      def copy_component_files
+        puts "Component #{component} not found in rbui gem" if component_source.empty?
+
+        component_files = Dir.glob("#{component_source}/*")
+
+        component_files.each do |file|
+          copy_file file, File.join(destination_path, component, File.basename(file))
+        end
+        update_index_file
+      end
+
+      def update_index_file
+        index_path = File.join(destination_root, "app/components/rbui/index.js")
+        content = File.read(index_path)
+
+        update_last_updated_date(content)
+        update_controller_registration(content)
+
+        File.write(index_path, content)
+      end
+
+      def update_last_updated_date(content)
+        content.sub!(/Last updated: .*/, "Last updated: #{Time.now.strftime("%Y-%m-%d %H:%M:%S")}")
+      end
+
+      def update_controller_registration(content)
+        all_js_controllers = Dir.glob(File.join(destination_path, "**", "*_controller.js"))
+
+        # Collect all valid controller information
+        valid_controllers = all_js_controllers.map do |controller_file|
+          relative_path = Pathname.new(controller_file).relative_path_from(Pathname.new(destination_path))
+          file_name = relative_path.basename(".js").to_s
+          component_name = file_name.sub(/_controller$/, "")
+          new_controller = "#{component_name.camelize}Controller"
+          new_path = "./#{relative_path.dirname}/#{file_name}"
+          registration_name = "rbui--#{component_name.dasherize}"
+
+          {
+            import: "import #{new_controller} from \"#{new_path}\";",
+            registration: "RBUI.unload(\"#{registration_name}\");\napplication.register(\"#{registration_name}\", #{new_controller});",
+            export: "export { default as #{new_controller} } from \"#{new_path}\";"
+          }
         end
 
-        private
+        # Update imports
+        imports = valid_controllers.map { |c| c[:import] }.sort
+        import_block = imports.join("\n")
+        content.sub!(/\/\/ Import all controller files.*?(?=\n\n)/m, "// Import all controller files\n#{import_block}")
 
-        def copy_directory(component, destination_path)
-          # Copy the entire directory if it exists
-          directory File.join("lib/rbui", component), File.join(destination_path, component)
-          puts "Copied directory #{component} to #{destination_path}"
-        end
+        # Update registrations
+        registrations = valid_controllers.map { |c| c[:registration] }.sort
+        registration_block = registrations.join("\n")
+        content.sub!(/\/\/ Register all controllers.*?(?=\n\n)/m, "// Register all controllers\n#{registration_block}")
 
-        def copy_single_file(component, source_path, destination_path)
-          # Copy base.rb and the component file if it's a single file
-          copy_file File.join(source_path, "base.rb"), File.join(destination_path, "base.rb")
-          copy_file File.join(source_path, "#{component}.rb"), File.join(destination_path, "#{component}.rb")
-          puts "Copied file #{component}.rb to #{destination_path}"
-        end
-      else
-        # Fallback for non-Rails environments
-        def copy_component_files
-          puts "This generator can only be run in a Rails environment."
-        end
+        # Update exports
+        exports = valid_controllers.map { |c| c[:export] }.sort
+        export_block = exports.join("\n")
+        content.sub!(/\/\/ Export all controllers.*?(?=\n\n)/m, "// Export all controllers so user of npm package can lazy load controllers\n#{export_block}")
+
+        content
+      end
+
+      def component
+        @component ||= component_name.downcase
+      end
+
+      def source_path
+        @source_path ||= "lib/rbui"
+      end
+
+      def destination_path
+        @destination_path ||= "app/components/rbui"
+      end
+
+      def component_source
+        @component_source ||= File.join(self.class.source_root, source_path, component)
+      end
+
+      def template_dir
+        @template_dir ||= File.join(__dir__, "templates")
       end
     end
   end
