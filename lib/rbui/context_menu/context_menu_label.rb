@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ContextMenuLabel < Base
     def initialize(inset: false, **attrs)
       @inset = inset

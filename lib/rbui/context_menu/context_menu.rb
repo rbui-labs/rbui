@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ContextMenu < Base
     def initialize(options: {}, **attrs)
       @options = options
@@ -17,7 +17,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "popover",
+          controller: "rbui--context-menu",
           popover_options_value: @options.to_json
         }
       }
