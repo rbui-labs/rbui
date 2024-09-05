@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class DropdownMenu < Base
     def initialize(options: {}, **attrs)
       @options = options
-      @options[:trigger] ||= "click"
       super(**attrs)
     end
 
@@ -17,8 +16,9 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "popover",
-          popover_options_value: @options.to_json
+          controller: "rbui--dropdown-menu",
+          action: "click@window->rbui--dropdown-menu#onClickOutside",
+          rbui__dropdown_menu_options_value: @options.to_json
         }
       }
     end

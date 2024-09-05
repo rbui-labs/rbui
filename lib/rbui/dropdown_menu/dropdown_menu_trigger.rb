@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class DropdownMenuTrigger < Base
     def view_template(&)
       div(**attrs, &)
@@ -10,7 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        data: {popover_target: "trigger"},
+        data: {rbui__dropdown_menu_target: "trigger", action: "click->rbui--dropdown-menu#toggle"},
         class: "inline-block"
       }
     end
