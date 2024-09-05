@@ -17,7 +17,7 @@ module RBUI
       {
         data: {
           controller: "rbui--alert-dialog",
-          alert_dialog_open_value: @open.to_s
+          rbui__alert_dialog_open_value: @open.to_s
         },
         class: "inline-block"
       }
