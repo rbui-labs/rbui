@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Tabs < Base
     def initialize(default: nil, **attrs)
       @default = default
@@ -16,7 +16,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "tabs",
+          controller: "rbui--tabs",
           tabs_active_value: @default
         }
       }
