@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class DropdownMenuContent < Base
     def view_template(&block)
-      template_tag(data: {popover_target: "content"}) do
+      div(data: {rbui__dropdown_menu_target: "content"}, class: "hidden", style: "width: max-content; position: absolute; top: 0; left: 0;") do
         div(**attrs, &block)
       end
     end
