@@ -10,7 +10,7 @@ module RBUI
 
     def default_attrs
       {
-        data: {controller: "rbui--dialog"}
+        data: {controller: "rbui--command"}
       }
     end
   end

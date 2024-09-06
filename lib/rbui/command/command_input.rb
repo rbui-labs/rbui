@@ -40,7 +40,7 @@ module RBUI
       {
         class: "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
         placeholder: @placeholder,
-        data_action: "input->rbui--command#filter keydown.down->rbui--command#handleKeydown keydown.up->rbui--command#handleKeydown keydown.enter->rbui--command#handleKeydown keydown.esc->rbui--dialog#dismiss",
+        data_action: "input->rbui--command#filter keydown.down->rbui--command#handleKeydown keydown.up->rbui--command#handleKeydown keydown.enter->rbui--command#handleKeydown keydown.esc->rbui--command#dismiss",
         data_rbui__command_target: "input",
         autocomplete: "off",
         autocorrect: "off",

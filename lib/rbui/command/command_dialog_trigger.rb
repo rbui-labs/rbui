@@ -8,7 +8,7 @@ module RBUI
     ].freeze
 
     def initialize(keybindings: DEFAULT_KEYBINDINGS, **attrs)
-      @keybindings = keybindings.map { |kb| "#{kb}->rbui--dialog#open" }
+      @keybindings = keybindings.map { |kb| "#{kb}->rbui--command#open" }
       super(**attrs)
     end
 
@@ -21,7 +21,7 @@ module RBUI
     def default_attrs
       {
         data: {
-          action: tokens("click->rbui--dialog#open", @keybindings.join(" "))
+          action: tokens("click->rbui--command#open", @keybindings.join(" "))
         }
       }
     end
