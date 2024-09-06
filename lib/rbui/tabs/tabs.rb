@@ -17,7 +17,7 @@ module RBUI
       {
         data: {
           controller: "rbui--tabs",
-          tabs_active_value: @default
+          rbui__tabs_active_value: @default
         }
       }
     end

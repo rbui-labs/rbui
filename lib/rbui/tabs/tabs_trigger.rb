@@ -17,7 +17,7 @@ module RBUI
       {
         type: :button,
         data: {
-          rbui__tabs_target: :trigger,
+          rbui__tabs_target: "trigger",
           action: "click->rbui--tabs#show",
           value: @value
         },
