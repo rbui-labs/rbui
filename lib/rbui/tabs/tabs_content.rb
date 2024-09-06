@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class TabsContent < Base
     def initialize(value:, **attrs)
       @value = value
@@ -16,7 +16,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          tabs_target: :content,
+          rbui__tabs_target: :content,
           value: @value
         },
         class: "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hidden"
