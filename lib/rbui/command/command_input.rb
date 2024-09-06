@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class CommandInput < Base
     def initialize(placeholder: "Type a command or search...", **attrs)
       @placeholder = placeholder
@@ -40,8 +40,8 @@ module PhlexUI
       {
         class: "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
         placeholder: @placeholder,
-        data_action: "input->command#filter keydown.down->command#handleKeydown keydown.up->command#handleKeydown keydown.enter->command#handleKeydown keydown.esc->dismissable#dismiss",
-        data_command_target: "input",
+        data_action: "input->rbui--command#filter keydown.down->rbui--command#handleKeydown keydown.up->rbui--command#handleKeydown keydown.enter->rbui--command#handleKeydown keydown.esc->rbui--dialog#dismiss",
+        data_rbui__command_target: "input",
         autocomplete: "off",
         autocorrect: "off",
         spellcheck: false,

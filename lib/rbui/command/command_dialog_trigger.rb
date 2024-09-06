@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class CommandDialogTrigger < Base
     DEFAULT_KEYBINDINGS = [
       "keydown.ctrl+k@window",
@@ -8,7 +8,7 @@ module PhlexUI
     ].freeze
 
     def initialize(keybindings: DEFAULT_KEYBINDINGS, **attrs)
-      @keybindings = keybindings.map { |kb| "#{kb}->dialog#open" }
+      @keybindings = keybindings.map { |kb| "#{kb}->rbui--dialog#open" }
       super(**attrs)
     end
 
@@ -21,7 +21,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          action: tokens("click->dialog#open", @keybindings.join(" "))
+          action: tokens("click->rbui--dialog#open", @keybindings.join(" "))
         }
       }
     end

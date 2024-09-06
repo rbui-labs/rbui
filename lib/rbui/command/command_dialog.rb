@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class CommandEmpty < Base
+module RBUI
+  class CommandDialog < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -10,9 +10,7 @@ module PhlexUI
 
     def default_attrs
       {
-        class: "py-6 text-center text-sm",
-        role: "presentation",
-        data: {command_target: "empty"}
+        data: {controller: "rbui--dialog"}
       }
     end
   end

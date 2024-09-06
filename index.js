@@ -17,6 +17,7 @@ import CheckboxGroupController from "./lib/rbui/checkbox/checkbox_group_controll
 import ComboboxController from "./lib/rbui/combobox/combobox_controller";
 import ComboboxContentController from "./lib/rbui/combobox/combobox_content_controller";
 import ComboboxItemController from "./lib/rbui/combobox/combobox_item_controller";
+import CommandController from "./lib/rbui/command/command_controller";
 import ContextMenuController from "./lib/rbui/context_menu/context_menu_controller";
 import DialogController from "./lib/rbui/dialog/dialog_controller";
 import DropdownMenuController from "./lib/rbui/dropdown_menu/dropdown_menu_controller";
@@ -39,6 +40,7 @@ application.register("rbui--checkbox-group", CheckboxGroupController);
 application.register("rbui--combobox", ComboboxController);
 application.register("rbui--combobox-content", ComboboxContentController);
 application.register("rbui--combobox-item", ComboboxItemController);
+application.register("rbui--command", CommandController);
 application.register("rbui--context-menu", ContextMenuController);
 application.register("rbui--dialog", DialogController);
 application.register("rbui--dropdown-menu", DropdownMenuController);
@@ -61,6 +63,7 @@ export { default as CheckboxGroupController } from "./lib/rbui/checkbox/checkbox
 export { default as ComboboxController } from "./lib/rbui/combobox/combobox_controller";
 export { default as ComboboxContentController } from "./lib/rbui/combobox/combobox_content_controller";
 export { default as ComboboxItemController } from "./lib/rbui/combobox/combobox_item_controller";
+export { default as CommandController } from "./lib/rbui/command/command_controller";
 export { default as ContextMenuController } from "./lib/rbui/context_menu/context_menu_controller";
 export { default as DialogController } from "./lib/rbui/dialog/dialog_controller";
 export { default as DropdownMenuController } from "./lib/rbui/dropdown_menu/dropdown_menu_controller";
