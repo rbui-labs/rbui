@@ -22,8 +22,8 @@ class PhlexUI::CommandTest < Minitest::Test
     ]
 
     output = phlex_context do
-      PhlexUI.CommandDialog do
-        PhlexUI.CommandDialogTrigger do
+      RBUI.CommandDialog do
+        RBUI.CommandDialogTrigger do
           RBUI.Button(variant: "outline", class: "w-56 pr-2 pl-3 justify-between") do |button|
             button.div(class: "flex items-center space-x-1") do |div|
               div.span(class: "text-muted-foreground font-normal") do |span|
@@ -36,21 +36,21 @@ class PhlexUI::CommandTest < Minitest::Test
             end
           end
         end
-        PhlexUI.CommandDialogContent do
-          PhlexUI.Command do
-            PhlexUI.CommandInput(placeholder: "Type a command or search...")
-            PhlexUI.CommandEmpty { "No results found." }
-            PhlexUI.CommandList do
-              PhlexUI.CommandGroup(title: "Components") do
+        RBUI.CommandDialogContent do
+          RBUI.Command do
+            RBUI.CommandInput(placeholder: "Type a command or search...")
+            RBUI.CommandEmpty { "No results found." }
+            RBUI.CommandList do
+              RBUI.CommandGroup(title: "Components") do
                 components_list.each do |component|
-                  PhlexUI.CommandItem(value: component[:name], href: component[:path]) do |item|
+                  RBUI.CommandItem(value: component[:name], href: component[:path]) do |item|
                     item.plain component[:name]
                   end
                 end
               end
-              PhlexUI.CommandGroup(title: "Settings") do
+              RBUI.CommandGroup(title: "Settings") do
                 settings_list.each do |setting|
-                  PhlexUI.CommandItem(value: setting[:name], href: setting[:path]) do |item|
+                  RBUI.CommandItem(value: setting[:name], href: setting[:path]) do |item|
                     item.plain setting[:name]
                   end
                 end

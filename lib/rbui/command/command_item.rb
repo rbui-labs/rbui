@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class CommandItem < Base
     def initialize(value:, text: "", href: "#", **attrs)
       @value = value
@@ -21,8 +21,9 @@ module PhlexUI
         href: @href,
         role: "option",
         data: {
-          command_target: "item",
-          value: @value, text: @text
+          rbui__command_target: "item",
+          value: @value,
+          text: @text
         }
         # aria_selected: "true", # Toggles aria-selected="true" on keydown
       }

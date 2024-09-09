@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class CommandDialogContent < Base
     SIZES = {
       xs: "max-w-sm",
@@ -17,8 +17,8 @@ module PhlexUI
     end
 
     def view_template(&block)
-      template_tag(data: {dialog_target: "content"}) do
-        div(data: {controller: "dismissable"}) do
+      template_tag(data: {rbui__command_target: "content"}) do
+        div(data: {controller: "rbui--command"}) do
           backdrop
           div(**attrs, &block)
         end
@@ -40,9 +40,8 @@ module PhlexUI
     def backdrop
       div(
         data_state: "open",
-        data_action: "click->dismissable#dismiss esc->dismissable#dismiss",
-        class:
-              "fixed pointer-events-auto inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+        data_action: "click->rbui--command#dismiss esc->rbui--command#dismiss",
+        class: "fixed pointer-events-auto inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
       )
     end
   end
