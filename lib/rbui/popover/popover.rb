@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Popover < Base
     def initialize(options: {}, **attrs)
       @options = options
@@ -16,8 +16,8 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "popover",
-          popover_options_value: @options.to_json
+          controller: "rbui--popover",
+          rbui__popover_options_value: @options.to_json
         }
       }
     end

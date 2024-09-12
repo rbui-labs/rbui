@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class PopoverTrigger < Base
     def view_template(&)
       div(**attrs, &)
@@ -11,7 +11,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          popover_target: "trigger"
+          rbui__popover_target: "trigger"
         },
         class: "inline-block"
       }
