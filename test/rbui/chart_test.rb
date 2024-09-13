@@ -26,7 +26,7 @@ class PhlexUI::ChartTest < Minitest::Test
         }
       }
 
-      PhlexUI.Chart(options: options)
+      RBUI.Chart(options: options)
     end
 
     assert_match(/Phlex/, output)
