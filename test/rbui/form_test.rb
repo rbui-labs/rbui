@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::FormTest < Minitest::Test
+class RBUI::FormTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
