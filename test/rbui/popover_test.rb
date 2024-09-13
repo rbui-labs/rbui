@@ -7,11 +7,11 @@ class PhlexUI::PopoverTest < Minitest::Test
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.Popover do
-        PhlexUI.PopoverTrigger(class: "w-full") do
+      RBUI.Popover do
+        RBUI.PopoverTrigger(class: "w-full") do
           RBUI.Button(variant: :outline) { "Open Popover" }
         end
-        PhlexUI.PopoverContent(class: "w-40") do
+        RBUI.PopoverContent(class: "w-40") do
           RBUI.Link(href: "#", variant: :ghost, class: "block w-full justify-start pl-2") do |link|
             link.plain "Profile"
           end
