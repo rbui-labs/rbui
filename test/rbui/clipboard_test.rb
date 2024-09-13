@@ -7,7 +7,7 @@ class PhlexUI::ClipboardTest < Minitest::Test
 
   def test_render_with_all_items
     output = phlex_context do
-      PhlexUI.Clipboard(success: "Copied!", error: "Copy Failed!")
+      RBUI.Clipboard(success: "Copied!", error: "Copy Failed!")
     end
 
     assert_match(/Copied/, output)

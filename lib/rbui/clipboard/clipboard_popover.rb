@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class ClipboardPopover < Base
     def initialize(type:, **attrs)
       @type = type
@@ -8,7 +8,11 @@ module PhlexUI
     end
 
     def view_template(&block)
-      template_tag(data: {clipboard_target: clipboard_target}) do
+      div(
+        class: "hidden",
+        style: "width: max-content; position: absolute; top: 0; left: 0;",
+        data: {rbui__clipboard_target: clipboard_target}
+      ) do
         div(**attrs, &block)
       end
     end
