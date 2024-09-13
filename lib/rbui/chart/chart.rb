@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Chart < PhlexUI::Base
     def initialize(options: {}, **attrs)
       @options = options.to_json
@@ -15,8 +15,8 @@ module PhlexUI
 
     def default_attrs
       {
-        data_controller: "chart",
-        data_chart_options_value: @options
+        data_controller: "rbui--chart",
+        data_rbui__chart_options_value: @options
       }
     end
   end

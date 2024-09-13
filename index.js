@@ -13,6 +13,7 @@ import AlertDialogController from "./lib/rbui/alert_dialog/alert_dialog_controll
 import CalendarController from "./lib/rbui/calendar/calendar_controller";
 import CalendarInputController from "./lib/rbui/calendar/calendar_input_controller";
 import CollapsibleController from "./lib/rbui/collapsible/collapsible_controller";
+import ChartController from "./lib/rbui/chart/chart_controller";
 import CheckboxGroupController from "./lib/rbui/checkbox/checkbox_group_controller";
 import ClipboardController from "./lib/rbui/clipboard/clipboard_controller";
 import ComboboxController from "./lib/rbui/combobox/combobox_controller";
@@ -39,6 +40,7 @@ application.register("rbui--alert-dialog", AlertDialogController);
 application.register("rbui--calendar", CalendarController);
 application.register("rbui--calendar-input", CalendarInputController);
 application.register("rbui--collapsible", CollapsibleController);
+application.register("rbui--chart", ChartController);
 application.register("rbui--checkbox-group", CheckboxGroupController);
 application.register("rbui--clipboard", ClipboardController);
 application.register("rbui--combobox", ComboboxController);
@@ -65,6 +67,7 @@ export { default as AlertDialogController } from "./lib/rbui/alert_dialog/alert_
 export { default as CalendarController } from "./lib/rbui/calendar/calendar_controller";
 export { default as CalendarInputController } from "./lib/rbui/calendar/calendar_input_controller";
 export { default as CollapsibleController } from "./lib/rbui/collapsible/collapsible_controller";
+export { default as ChartController } from "./lib/rbui/chart/chart_controller";
 export { default as CheckboxGroupController } from "./lib/rbui/checkbox/checkbox_group_controller";
 export { default as ClipboardController } from "./lib/rbui/clipboard/clipboard_controller";
 export { default as ComboboxController } from "./lib/rbui/combobox/combobox_controller";
