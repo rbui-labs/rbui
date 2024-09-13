@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PhlexUI
-  class ClipboardTrigger < Base
+module RBUI
+  class ClipboardSource < Base
     def view_template(&)
       div(**attrs, &)
     end
@@ -11,8 +11,7 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          clipboard_target: "trigger",
-          action: "click->clipboard#copy"
+          rbui__clipboard_target: "source"
         }
       }
     end

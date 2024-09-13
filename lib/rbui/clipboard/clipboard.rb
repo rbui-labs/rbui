@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-module PhlexUI
+module RBUI
   class Clipboard < Base
-    def initialize(success: "Copied!", error: "Copy Failed!", **attrs)
+    def initialize(options: {}, success: "Copied!", error: "Copy Failed!", **attrs)
+      @options = options
       @success = success
       @error = error
       super(**attrs)
@@ -29,9 +30,11 @@ module PhlexUI
     def default_attrs
       {
         data: {
-          controller: "clipboard",
-          clipboard_success_value: @success,
-          clipboard_error_value: @error
+          controller: "rbui--clipboard",
+          action: "click@window->rbui--clipboard#onClickOutside",
+          rbui__clipboard_success_value: @success,
+          rbui__clipboard_error_value: @error,
+          rbui__clipboard_options_value: @options.to_json
         }
       }
     end
