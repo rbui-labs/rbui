@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::DropdownMenuTest < Minitest::Test
+class RBUI::DropdownMenuTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items

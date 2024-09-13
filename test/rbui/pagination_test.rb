@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::PaginationTest < Minitest::Test
+class RBUI::PaginationTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items

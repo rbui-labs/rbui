@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::AlertDialogTest < Minitest::Test
+class RBUI::AlertDialogTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items

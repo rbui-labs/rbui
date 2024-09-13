@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::HoverCardTest < Minitest::Test
+class RBUI::HoverCardTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items

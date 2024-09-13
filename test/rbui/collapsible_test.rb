@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::CollapsibleTest < Minitest::Test
+class RBUI::CollapsibleTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
