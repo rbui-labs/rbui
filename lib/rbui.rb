@@ -1,11 +1,9 @@
+# frozen_string_literal: true
+
 require "json"
 require "phlex"
 
 module RBUI
-  extend Phlex::Kit
-end
-
-module PhlexUI
   extend Phlex::Kit
 
   attr_accessor :namespace
@@ -40,9 +38,7 @@ module PhlexUI
 end
 
 # Require the Base class first
-require_relative "phlex_ui/base"
 require_relative "rbui/base"
 
 # Manually require all the files
-Dir.glob(File.join(__dir__, "phlex_ui", "**", "*.rb")).sort.each { |file| require file }
 Dir.glob(File.join(__dir__, "rbui", "**", "*.rb")).sort.each { |file| require file }

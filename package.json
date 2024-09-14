@@ -1,14 +1,14 @@
 {
   "name": "rbui-js",
   "version": "0.0.1-alpha.0",
-  "description": "Stimulus controllers for PhlexUI Component Library",
+  "description": "Stimulus controllers for RbUI Component Library",
   "main": "index.js",
-  "homepage": "https://phlexui.com",
+  "homepage": "https://rbui.dev",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "PhlexUI",
+    "RbUI",
     "Stimulus",
     "StimulusJS",
     "StimulusControllers",
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PhlexUI/phlex_ui.git"
+    "url": "https://github.com/rbui-hq/rbui.git"
   },
   "author": "George Kettle",
   "license": "ISC",

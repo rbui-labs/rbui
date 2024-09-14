@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phlex_ui (0.1.10)
+    rbui (0.2.0)
       phlex (~> 1.10)
       rouge (~> 4.2.0)
       tailwind_merge (>= 0.12)
@@ -67,8 +67,8 @@ PLATFORMS
 
 DEPENDENCIES
   minitest
-  phlex_ui!
   rake
+  rbui!
   standard
 
 BUNDLED WITH

@@ -1,15 +1,15 @@
-require_relative "lib/phlex_ui/version"
+require_relative "lib/rbui/version"
 
 Gem::Specification.new do |s|
-  s.name = "phlex_ui"
-  s.version = PhlexUI::VERSION
-  s.summary = "PhlexUI is a UI Component Library for Ruby developers."
-  s.description = "PhlexUI is a UI Component Library for Ruby developers. Built on top of the Phlex Framework."
+  s.name = "rbui"
+  s.version = RBUI::VERSION
+  s.summary = "RbUI is a UI Component Library for Ruby developers."
+  s.description = "RbUI is a UI Component Library for Ruby developers. Built on top of the Phlex Framework."
   s.authors = ["George Kettle"]
   s.email = "george.kettle@icloud.com"
   s.files = Dir["lib/**/*.rb", "tasks/**/*.rake"]
   s.homepage =
-    "https://rubygems.org/gems/phlex_ui"
+    "https://rubygems.org/gems/rbui"
   s.license = "MIT"
 
   s.required_ruby_version = ">= 3.2"
