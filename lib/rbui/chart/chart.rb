@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RBUI
-  class Chart < PhlexUI::Base
+  class Chart < Base
     def initialize(options: {}, **attrs)
       @options = options.to_json
       super(**attrs)
