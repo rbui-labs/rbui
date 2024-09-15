@@ -1,5 +1,5 @@
-# PhlexUI
+# RbUI
 
 A UI component library, crafted precisely for Ruby devs who want to stay organized and build modern apps, fast.
 
-Visit [phlexui.com](https://phlexui.com) for more information.
+Visit [rbui.dev](https://rbui.dev) for more information.

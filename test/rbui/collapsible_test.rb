@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class PhlexUI::CollapsibleTest < Minitest::Test
+class RBUI::CollapsibleTest < Minitest::Test
   include Phlex::Testing::ViewHelper
 
   def test_render_with_all_items
@@ -19,7 +19,7 @@ class PhlexUI::CollapsibleTest < Minitest::Test
             "phlex-ruby/phlex-rails"
           end
           content.div(class: "rounded-md border px-4 py-2 font-mono text-sm shadow-sm") do
-            "PhlexUI/phlex_ui"
+            "RbUI/rbui"
           end
         end
       end

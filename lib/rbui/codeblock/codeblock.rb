@@ -39,12 +39,12 @@ module RBUI
     end
 
     def with_clipboard
-      PhlexUI.Clipboard(success: @clipboard_success, error: @clipboard_error, class: "relative") do
-        PhlexUI.ClipboardSource do
+      RBUI.Clipboard(success: @clipboard_success, error: @clipboard_error, class: "relative") do
+        RBUI.ClipboardSource do
           codeblock
         end
         div(class: "absolute top-2 right-2") do
-          PhlexUI.ClipboardTrigger do
+          RBUI.ClipboardTrigger do
             RBUI.Button(variant: :ghost, size: :sm, icon: true, class: "text-white hover:text-white hover:bg-white/20") { clipboard_icon }
           end
         end
