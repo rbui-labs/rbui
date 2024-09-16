@@ -71,36 +71,36 @@ module RBUI
           importmap_binstub = Rails.root.join("bin/importmap")
           importmap_config_path = Rails.root.join("config/importmap.rb")
           stimulus_path = Rails.root.join("app/javascript/application.js")
+          package_name = "rbui-js"
 
           if importmap_binstub.exist?
-            say "Pin rbui-js"
+            say "Pin #{package_name}"
             append_to_file importmap_config_path do
-              %(pin "rbui-js", to: "rbui-js.js"\n)
+              # %(pin "rbui-js", to: "rbui-js.js"\n)
+              %(pin #{package_name}, to: "rbui-js.js"\n)
             end
           else
             say "Add rbui-js package"
-            # run "yarn add rbui-js"
-            run "yarn add ../phlex_ui"
-            run "yarn add phlex_ui"
+            run "yarn add #{package_name}"
           end
 
           if stimulus_path.exist?
             say "Add RBUI Stimulus controllers"
             append_to_file stimulus_path do
-              "\nimport \"rbui-js\";\nimport \"phlex_ui\";\n"
+              "\nimport \"#{package_name}\";\n"
             end
             run "yarn build"
           else
             say "Default Stimulus location is missing: app/javascript/controllers/index.js", :red
             say "        Add to your Stimulus index.js:"
-            say "            import \"rbui-js\""
+            say "            import \"#{package_name}\""
           end
         end
 
         def include_rbui
           say "Add RBUI to your global component layout"
           insert_into_file "app/views/application_view.rb", after: "class ApplicationView < ApplicationComponent\n" do
-            "  include RBUI\n  include PhlexUI\n"
+            "  include RBUI\n"
           end
         end
 
