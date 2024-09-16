@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["George Kettle"]
   s.email = "george.kettle@icloud.com"
   s.files = Dir["lib/**/*.rb", "tasks/**/*.rake"]
+  s.require_path = "lib"
   s.homepage =
     "https://rubygems.org/gems/rbui"
   s.license = "MIT"

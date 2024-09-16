@@ -42,3 +42,8 @@ require_relative "rbui/base"
 
 # Manually require all the files
 Dir.glob(File.join(__dir__, "rbui", "**", "*.rb")).sort.each { |file| require file }
+
+# If you need to require generators (assuming they're needed)
+if defined?(Rails::Generators)
+  require_relative "generators/rbui/install/install_generator"
+end
