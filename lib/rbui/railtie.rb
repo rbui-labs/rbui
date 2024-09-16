@@ -16,14 +16,14 @@ module RBUI
       # Add component loading
       config.to_prepare do
         # Define the path to the RBUI components
-        phlex_ui_components_path = Rails.root.join("app/components/rbui")
+        rbui_components_path = Rails.root.join("app/components/rbui")
 
         # Check if the RBUI components directory exists
-        if Dir.exist?(phlex_ui_components_path)
+        if Dir.exist?(rbui_components_path)
           # Find all Ruby files in the RBUI components directory and its subdirectories
-          Dir[phlex_ui_components_path.join("**", "*.rb")].each do |file|
+          Dir[rbui_components_path.join("**", "*.rb")].each do |file|
             # Get the relative path of the file from the RBUI components directory
-            relative_path = Pathname.new(file).relative_path_from(phlex_ui_components_path)
+            relative_path = Pathname.new(file).relative_path_from(rbui_components_path)
 
             # Convert the file path to a component name
             # e.g., "form/input.rb" becomes ["Form", "Input"]
