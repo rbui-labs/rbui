@@ -3,14 +3,6 @@
 require "json"
 require "phlex"
 
-if defined?(ActiveSupport::Inflector)
-  require "active_support/inflector"
-  ActiveSupport::Inflector.inflections(:en) do |inflect|
-    inflect.acronym "PhlexUI"
-    inflect.acronym "UI"
-  end
-end
-
 module RBUI
   extend Phlex::Kit
 

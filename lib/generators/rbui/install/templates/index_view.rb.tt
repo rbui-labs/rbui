@@ -2,7 +2,7 @@
 
 class Static::IndexView < ApplicationView
   def template
-  render PhlexUI::Button.new { "click me" }
+  render RBUI::Button.new { "click me" }
   br {}
 
   # UI.Button { "click me" }
