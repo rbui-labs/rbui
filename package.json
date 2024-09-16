@@ -1,6 +1,6 @@
 {
   "name": "rbui-js",
-  "version": "0.0.1-alpha.0",
+  "version": "1.0.0-alpha.3",
   "main": "lib/rbui/index.js",
   "description": "Stimulus controllers for RbUI Component Library",
   "homepage": "https://rbui.dev",
@@ -36,4 +36,3 @@
     "globals": "^15.8.0"
   }
 }
-
