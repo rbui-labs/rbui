@@ -11,7 +11,8 @@ module RBUI
     def default_attrs
       {
         data: {
-          rbui__popover_target: "trigger"
+          rbui__popover_target: "trigger",
+          action: "mouseover->rbui--popover#hadleMouseOver mouseout->rbui--popover#handleMouseOut"
         },
         class: "inline-block"
       }
