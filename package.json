@@ -1,8 +1,8 @@
 {
   "name": "rbui-js",
   "version": "0.0.1-alpha.0",
+  "main": "lib/rbui/index.js",
   "description": "Stimulus controllers for RbUI Component Library",
-  "main": "index.js",
   "homepage": "https://rbui.dev",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -36,3 +36,4 @@
     "globals": "^15.8.0"
   }
 }
+
