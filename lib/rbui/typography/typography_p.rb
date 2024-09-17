@@ -5,11 +5,5 @@ module RBUI
     def view_template(&)
       p(**attrs, &)
     end
-
-    private
-
-    def default_attrs
-      {}
-    end
   end
 end
