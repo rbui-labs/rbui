@@ -9,9 +9,7 @@ module RBUI
     private
 
     def default_attrs
-      {
-        class: "leading-7"
-      }
+      {}
     end
   end
 end
