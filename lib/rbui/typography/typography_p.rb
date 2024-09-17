@@ -10,7 +10,7 @@ module RBUI
 
     def default_attrs
       {
-        class: "leading-7 [&:not(:first-child)]:mt-6"
+        class: "leading-7"
       }
     end
   end
