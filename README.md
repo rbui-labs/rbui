@@ -5,9 +5,7 @@ A UI component library, crafted precisely for Ruby devs who want to stay organiz
 
 ## Documentation
 
-Visit http://ui.shadcn.com/docs to view the documentation.
-
-Visit [rbui.dev](https://rbui.dev) for more information.
+Visit https://rbui.dev/docs to view the documentation.
 
 ## License
 
