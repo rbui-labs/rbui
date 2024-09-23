@@ -35,19 +35,15 @@ module RBUI
 
       def update_index_file
         index_path = File.join(destination_root, "app/components/rbui/index.js")
+
         content = File.read(index_path)
 
-        update_last_updated_date(content)
-        update_controller_registration(content)
+        add_controller_registration(content)
 
         File.write(index_path, content)
       end
 
-      def update_last_updated_date(content)
-        content.sub!(/Last updated: .*/, "Last updated: #{Time.now.strftime("%Y-%m-%d %H:%M:%S")}")
-      end
-
-      def update_controller_registration(content)
+      def add_controller_registration(content)
         all_js_controllers = Dir.glob(File.join(destination_path, "**", "*_controller.js"))
 
         # Collect all valid controller information
@@ -61,7 +57,7 @@ module RBUI
 
           {
             import: "import #{new_controller} from \"#{new_path}\";",
-            registration: "RBUI.unload(\"#{registration_name}\");\napplication.register(\"#{registration_name}\", #{new_controller});",
+            registration: "application.register(\"#{registration_name}\", #{new_controller});",
             export: "export { default as #{new_controller} } from \"#{new_path}\";"
           }
         end
@@ -77,9 +73,9 @@ module RBUI
         content.sub!(/\/\/ Register all controllers.*?(?=\n\n)/m, "// Register all controllers\n#{registration_block}")
 
         # Update exports
-        exports = valid_controllers.map { |c| c[:export] }.sort
-        export_block = exports.join("\n")
-        content.sub!(/\/\/ Export all controllers.*?(?=\n\n)/m, "// Export all controllers so user of npm package can lazy load controllers\n#{export_block}")
+        # exports = valid_controllers.map { |c| c[:export] }.sort
+        # export_block = exports.join("\n")
+        # content.sub!(/\/\/ Export all controllers.*?(?=\n\n)/m, "// Export all controllers so user of npm package can lazy load controllers\n#{export_block}")
 
         content
       end
