@@ -2,7 +2,7 @@
 
 module RBUI
   class Textarea < Base
-    def initialize(rows: 8, **attrs)
+    def initialize(rows: 4, **attrs)
       @rows = rows
       super(**attrs)
     end
