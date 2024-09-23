@@ -10,7 +10,7 @@ module RBUI
 
     def default_attrs
       {
-        class: "divide-y divide-border"
+        class: "max-h-80 overflow-scroll divide-y divide-border"
       }
     end
   end
