@@ -4,11 +4,13 @@ require "tailwind_merge"
 
 module RBUI
   class Base < Phlex::HTML
+    TAILWIND_MERGER = ::TailwindMerge::Merger.new
+
     attr_reader :attrs
 
     def initialize(**user_attrs)
       @attrs = mix(default_attrs, user_attrs)
-      @attrs[:class] = ::TailwindMerge::Merger.new.merge(@attrs[:class]) if @attrs[:class]
+      @attrs[:class] = TAILWIND_MERGER.merge(@attrs[:class]) if @attrs[:class]
     end
 
     if defined?(Rails) && Rails.env.development?
