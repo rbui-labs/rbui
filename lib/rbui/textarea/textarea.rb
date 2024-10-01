@@ -7,8 +7,8 @@ module RBUI
       super(**attrs)
     end
 
-    def view_template
-      textarea(rows: @rows, **attrs)
+    def view_template(&)
+      textarea(rows: @rows, **attrs, &)
     end
 
     private
