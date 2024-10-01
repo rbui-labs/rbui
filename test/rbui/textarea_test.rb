@@ -12,4 +12,12 @@ class RBUI::TextareaTest < Minitest::Test
 
     assert_match(/Comment/, output)
   end
+
+  def test_render_with_value
+    output = phlex_context do
+      RBUI.Textarea(rows: 4) { "Value" }
+    end
+
+    assert_match(/Value/, output)
+  end
 end

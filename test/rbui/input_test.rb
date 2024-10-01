@@ -12,4 +12,12 @@ class RBUI::InputTest < Minitest::Test
 
     assert_match(/Email/, output)
   end
+
+  def test_render_with_value
+    output = phlex_context do
+      RBUI.Input(type: "email", value: "Value")
+    end
+
+    assert_match(/Value/, output)
+  end
 end
