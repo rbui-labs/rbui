@@ -17,7 +17,8 @@ module RBUI
       {
         data: {
           controller: "rbui--popover",
-          rbui__popover_options_value: @options.to_json
+          rbui__popover_options_value: @options.to_json,
+          rbui__popover_trigger_value: @options[:trigger] || "hover"
         }
       }
     end
