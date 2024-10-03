@@ -86,9 +86,8 @@ module RBUI
 
           if stimulus_path.exist?
             say "Add RBUI Stimulus controllers"
-            append_to_file stimulus_path do
-              "\nimport \"#{package_name}\";\n"
-            end
+            template "#{template_dir}/index.js", "#{destination_path}/index.js" unless File.exist?("#{destination_path}/index.js")
+            append_to_file stimulus_path, "\nimport \"../components/rbui\";\n"
             run "yarn build"
           else
             say "Default Stimulus location is missing: app/javascript/controllers/index.js", :red

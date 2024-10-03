@@ -18,8 +18,6 @@ module RBUI
       def copy_common_files
         template "#{template_dir}/index.js", "#{destination_path}/index.js" unless File.exist?("#{destination_path}/index.js")
         copy_file File.join(source_path, "base.rb"), File.join(destination_path, "base.rb")
-
-        append_to_file "app/javascript/application.js", "\nimport \"../components/rbui\";\n"
       end
 
       def copy_component_files
