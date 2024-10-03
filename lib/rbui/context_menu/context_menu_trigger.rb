@@ -11,8 +11,7 @@ module RBUI
     def default_attrs
       {
         data: {
-          rbui__context_menu_target: "trigger",
-          action: "contextmenu->rbui--context-menu#handleContextMenu"
+          rbui__context_menu_target: "trigger"
         }
       }
     end

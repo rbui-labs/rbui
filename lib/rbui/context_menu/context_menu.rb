@@ -4,7 +4,7 @@ module RBUI
   class ContextMenu < Base
     def initialize(options: {}, **attrs)
       @options = options
-      @options[:trigger] ||= "manual"
+      @options[:trigger] ||= "contextmenu"
       super(**attrs)
     end
 
@@ -18,7 +18,8 @@ module RBUI
       {
         data: {
           controller: "rbui--context-menu",
-          popover_options_value: @options.to_json
+          rbui__context_menu_options_value: @options.to_json,
+          rbui__context_menu_trigger_value: @options[:trigger]
         }
       }
     end
