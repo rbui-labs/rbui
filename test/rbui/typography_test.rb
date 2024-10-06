@@ -3,8 +3,6 @@
 require "test_helper"
 
 class RBUI::TypographyTest < Minitest::Test
-  include Phlex::Testing::ViewHelper
-
   def test_h1
     output = phlex_context do
       RBUI.TypographyH1 { "This is an H1 title" }

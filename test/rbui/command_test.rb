@@ -3,8 +3,6 @@
 require "test_helper"
 
 class RBUI::CommandTest < Minitest::Test
-  include Phlex::Testing::ViewHelper
-
   def test_render_with_all_items
     components_list = [
       {name: "Accordion", path: "#"},

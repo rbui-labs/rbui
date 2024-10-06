@@ -3,8 +3,6 @@
 require "test_helper"
 
 class RBUI::SelectTest < Minitest::Test
-  include Phlex::Testing::ViewHelper
-
   def test_render_with_all_items
     people = [
       ["John Doe", 1],

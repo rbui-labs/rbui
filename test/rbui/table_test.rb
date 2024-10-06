@@ -3,8 +3,6 @@
 require "test_helper"
 
 class RBUI::TableTest < Minitest::Test
-  include Phlex::Testing::ViewHelper
-
   def test_render_with_all_items
     invoices = [
       {identifier: "INV-0001", status: "Active", method: "Credit Card", amount: 100},

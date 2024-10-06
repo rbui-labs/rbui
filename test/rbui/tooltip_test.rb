@@ -3,8 +3,6 @@
 require "test_helper"
 
 class RBUI::TooltipTest < Minitest::Test
-  include Phlex::Testing::ViewHelper
-
   def test_render_with_all_items
     output = phlex_context do
       RBUI.Tooltip do
