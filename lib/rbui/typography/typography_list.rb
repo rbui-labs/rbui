@@ -36,11 +36,11 @@ module RBUI
 
     def default_attrs
       {
-        class: tokens(
+        class: [
           "my-6 ml-6 [&>li]:mt-2 [&>li]:pl-2",
           numbered?: "list-decimal marker:font-medium",
           not_numbered?: "list-disc"
-        )
+        ]
       }
     end
   end
