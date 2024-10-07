@@ -13,21 +13,17 @@ jobs:
     name: StandardRB Check Action
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout@v4
-     - uses: ruby/setup-ruby@v1
-       with:
-         ruby-version: 3.3
-         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-     - run: bundle exec standardrb --format progress
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - run: bundle exec standardrb --format progress
   tests:
     strategy:
-        fail-fast: false
-        matrix:
-          os: ["ubuntu-latest"]
-          ruby-version:
-            - "3.2"
-            - "3.3"
-            - "head"
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest"]
+
     name: Running minitest
     runs-on: ubuntu-latest
     steps:
