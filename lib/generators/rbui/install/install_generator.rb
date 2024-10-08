@@ -71,6 +71,8 @@ module RBUI
           importmap_binstub = Rails.root.join("bin/importmap")
           importmap_config_path = Rails.root.join("config/importmap.rb")
           stimulus_path = Rails.root.join("app/javascript/application.js")
+          destination_path = Rails.root.join("app/components/rbui")
+          template_dir = File.join(__dir__, "../templates")
           package_name = "rbui-js"
 
           if importmap_binstub.exist?
