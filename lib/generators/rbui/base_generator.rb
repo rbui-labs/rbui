@@ -7,8 +7,10 @@ module RBUI
 
       source_root File.join(__dir__, "templates")
 
-      def copy_templates
-        template "base_store_initializer.rb", "config/initializers/rbui.rb"
+      private
+
+      def using_importmap?
+        File.exist?(Rails.root.join("config/importmap.rb")) && File.exist?(Rails.root.join("bin/importmap"))
       end
     end
   end

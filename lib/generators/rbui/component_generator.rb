@@ -1,6 +1,6 @@
 module RBUI
   module Generators
-    class ComponentGenerator < defined?(Rails::Generators::Base) ? Rails::Generators::Base : Object
+    class ComponentGenerator < RBUI::Generators::BaseGenerator
       namespace "rbui:component"
 
       source_root File.expand_path("../../..", __dir__)
@@ -34,48 +34,83 @@ module RBUI
       def update_index_file
         index_path = File.join(destination_root, "app/components/rbui/index.js")
 
-        content = File.read(index_path)
+        rbui_index_content = File.read(index_path)
 
-        add_controller_registration(content)
+        updated_rbui_index_content = add_controller_registration(rbui_index_content)
 
-        File.write(index_path, content)
+        File.write(index_path, updated_rbui_index_content)
       end
 
-      def add_controller_registration(content)
+      def add_controller_registration(rbui_index_content)
+        valid_controllers = get_valid_controllers
+
+        rbui_index_content = update_imports(rbui_index_content, valid_controllers)
+        update_registrations(rbui_index_content, valid_controllers)
+        # Uncomment the following line if you want to update exports
+        # rbui_index_content = update_exports(rbui_index_content, valid_controllers)
+      end
+
+      def get_valid_controllers
         all_js_controllers = Dir.glob(File.join(destination_path, "**", "*_controller.js"))
 
-        # Collect all valid controller information
-        valid_controllers = all_js_controllers.map do |controller_file|
-          relative_path = Pathname.new(controller_file).relative_path_from(Pathname.new(destination_path))
-          file_name = relative_path.basename(".js").to_s
-          component_name = file_name.sub(/_controller$/, "")
-          new_controller = "#{component_name.camelize}Controller"
-          new_path = "./#{relative_path.dirname}/#{file_name}"
-          registration_name = "rbui--#{component_name.dasherize}"
-
-          {
-            import: "import #{new_controller} from \"#{new_path}\";",
-            registration: "application.register(\"#{registration_name}\", #{new_controller});",
-            export: "export { default as #{new_controller} } from \"#{new_path}\";"
-          }
+        all_js_controllers.map do |controller_file|
+          controller_info(controller_file)
         end
+      end
 
-        # Update imports
-        imports = valid_controllers.map { |c| c[:import] }.sort
-        import_block = imports.join("\n")
-        content.sub!(/\/\/ Import all controller files.*?(?=\n\n)/m, "// Import all controller files\n#{import_block}")
+      def controller_info(controller_file)
+        # Get the relative path from the destination path to the controller file
+        relative_path = Pathname.new(controller_file).relative_path_from(Pathname.new(destination_path))
 
-        # Update registrations
-        registrations = valid_controllers.map { |c| c[:registration] }.sort
-        registration_block = registrations.join("\n")
-        content.sub!(/\/\/ Register all controllers.*?(?=\n\n)/m, "// Register all controllers\n#{registration_block}")
+        # Extract the file name without the .js extension
+        file_name = relative_path.basename(".js").to_s
 
-        # Update exports
-        # exports = valid_controllers.map { |c| c[:export] }.sort
-        # export_block = exports.join("\n")
-        # content.sub!(/\/\/ Export all controllers.*?(?=\n\n)/m, "// Export all controllers so user of npm package can lazy load controllers\n#{export_block}")
+        # Remove '_controller' suffix to get the component name
+        component_name = file_name.sub(/_controller$/, "")
 
-        content
+        # Create the new controller name by camelizing the component name and adding 'Controller'
+        new_controller = "#{component_name.camelize}Controller"
+
+        # Build the new import path
+        new_import_path = new_import_path("./#{relative_path.dirname}/#{file_name}")
+
+        # Create the registration name by dasherizing the component name and prefixing with 'rbui--'
+        registration_name = "rbui--#{component_name.dasherize}"
+
+        # Return a hash with import, registration, and export statements
+        {
+          # Import statement for importmaps
+          import: "import #{new_controller} from \"#{new_import_path}\";",
+
+          # Registration statement for the Stimulus controller
+          registration: "application.register(\"#{registration_name}\", #{new_controller});",
+
+          # Export statement for the controller
+          export: "export { default as #{new_controller} } from \"#{new_import_path}\";"
+        }
+      end
+
+      def new_import_path(relative_path)
+        if using_importmap?
+          "rbui/#{relative_path.sub(/^\.\//, "")}"
+        else
+          relative_path
+        end
+      end
+
+      def update_imports(content, controllers)
+        imports = controllers.map { |c| c[:import] }.sort.join("\n")
+        content.sub(/\/\/ Import all controller files.*?(?=\n\n)/m, "// Import all controller files\n#{imports}")
+      end
+
+      def update_registrations(content, controllers)
+        registrations = controllers.map { |c| c[:registration] }.sort.join("\n")
+        content.sub(/\/\/ Register all controllers.*?(?=\n\n)/m, "// Register all controllers\n#{registrations}")
+      end
+
+      def update_exports(content, controllers)
+        exports = controllers.map { |c| c[:export] }.sort.join("\n")
+        content.sub(/\/\/ Export all controllers.*?(?=\n\n)/m, "// Export all controllers so user of npm package can lazy load controllers\n#{exports}")
       end
 
       def component
