@@ -81,6 +81,10 @@ module.exports = {
     },
   },
   plugins: [
+    <% if using_importmap? %>
+    require("../vendor/javascript/tailwindcss-animate"),
+    <% else %>
     require("tailwindcss-animate"),
+    <% end %>
   ],
 }
