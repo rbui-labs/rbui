@@ -64,6 +64,11 @@ RBUI, powered by Phlex, outperforms traditional methods:
 
 _Huge thanks to @KonnorRogers for running these tests_ 🙏
 
+## Importmap notes:
+
+If you run into importmap issues this stackoverflow question might help:
+https://stackoverflow.com/questions/70548841/how-to-add-custom-js-file-to-new-rails-7-project/72855705
+
 ## License 📜
 
 Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
