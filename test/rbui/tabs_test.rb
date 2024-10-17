@@ -14,6 +14,7 @@ class RBUI::TabsTest < Minitest::Test
         end
         RBUI.TabsContent(value: "account") do
           RBUI.TypographyLarge { "Account" }
+          RBUI::Text(size: "5", weight: "semibold") { "Are you sure absolutely sure?" }
           RBUI.TypographyMuted { "Update your account details." }
         end
         RBUI.TabsContent(value: "password") do
