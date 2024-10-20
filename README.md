@@ -47,7 +47,7 @@ bin/rails g rbui:install
 
 ## Documentation 📖
 
-Visit https://rbui.dev/docs to view the full documentation, including:
+Visit https://rbui.dev/docs/introduction to view the full documentation, including:
 
 - Detailed component guides
 - Themes
