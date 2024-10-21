@@ -6,8 +6,6 @@ require "phlex"
 module RBUI
   extend Phlex::Kit
 
-  attr_accessor :namespace
-
   def self.setup
     yield self
     create_namespace_module if namespace
@@ -34,6 +32,14 @@ module RBUI
         source_module.respond_to?(name) || super(name, include_private)
       end
     end
+  end
+
+  def self.namespace
+    @namespace ||= nil
+  end
+
+  def self.namespace=(value)
+    @namespace = value
   end
 end
 
