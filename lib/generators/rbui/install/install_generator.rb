@@ -114,6 +114,11 @@ module RBUI
             run "bin/importmap pin #{package_name}"
             append_to_file stimulus_path, "\nimport \"rbui\";\n"
 
+            manifest_path = Rails.root.join("app/assets/config/manifest.js")
+            if File.exist?(manifest_path)
+              append_to_file manifest_path, "\n//= link rbui/index.js\n"
+            end
+
             fix_import_maps!
           else
             say "Add rbui-js package"
