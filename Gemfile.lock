@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rbui (1.0.0.pre.alpha.3)
+    ruby_ui (1.0.0.pre.alpha.4)
       phlex (~> 1.10)
       rouge (~> 4.2.0)
       tailwind_merge (>= 0.12)
@@ -57,7 +57,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.21.0)
     strscan (3.1.0)
-    tailwind_merge (0.13.0)
+    tailwind_merge (0.13.2)
       lru_redux (~> 1.1)
     unicode-display_width (2.5.0)
 
@@ -68,7 +68,7 @@ PLATFORMS
 DEPENDENCIES
   minitest
   rake
-  rbui!
+  ruby_ui!
   standard
 
 BUNDLED WITH

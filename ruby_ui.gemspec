@@ -1,16 +1,16 @@
 require_relative "lib/rbui/version"
 
 Gem::Specification.new do |s|
-  s.name = "rbui"
+  s.name = "ruby_ui"
   s.version = RBUI::VERSION
-  s.summary = "RbUI is a UI Component Library for Ruby developers."
-  s.description = "RbUI is a UI Component Library for Ruby developers. Built on top of the Phlex Framework."
+  s.summary = "RubyUI is a UI Component Library for Ruby developers."
+  s.description = "Ruby UI is a UI Component Library for Ruby developers. Built on top of the Phlex Framework."
   s.authors = ["George Kettle"]
   s.email = "george.kettle@icloud.com"
   s.files = Dir["lib/**/*.rb", "tasks/**/*.rake"]
   s.require_path = "lib"
   s.homepage =
-    "https://rubygems.org/gems/rbui"
+    "https://rubygems.org/gems/ruby_ui"
   s.license = "MIT"
 
   s.required_ruby_version = ">= 3.2"
